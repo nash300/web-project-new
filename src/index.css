@@ -1,0 +1,161 @@
+/*
+This document includes stylings for the main layout. 
+Stylings for the navigation section (Topbar) are included in a different file called Topbar.css.
+*/
+#root {
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+h2 {
+  background-color: rgb(92, 197, 78);
+  height: auto;
+  text-align: left;
+  color: white;
+  box-shadow: 0 0 5px rgb(68, 68, 68);
+  padding-left: 3%;
+}
+
+h3,
+li {
+  text-transform: capitalize;
+  list-style-type: none;
+}
+
+/*---------------------------------------------------
+This assigns the total screen area for this website*/
+#pageWrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+/*
+-------------------------------------------------------------------------------------------- 
+This include the main layout settings for the topbar. More specific styling has been assigned 
+in a seperate file (Topbar.css)
+*/
+#topBar {
+  display: block;
+  height: 15%;
+  border-bottom: 2px solid #bdbdbd;
+}
+#logo {
+  height: 80%;
+}
+
+#logo img {
+  max-width: 100%;
+  height: 100%;
+}
+
+#navBar {
+  display: flex;
+  height: 20%;
+  max-width: 100%;
+  justify-content: flex-end;
+}
+
+#navBar ul {
+  display: flex;
+  float: right;
+  flex: 1;
+  justify-content: flex-end;
+  margin: 0px;
+  max-width: 25%;
+}
+
+.navBarClass li {
+  display: flex;
+  flex: 1; /* equal width*/
+  align-items: center; /*virtical*/
+  justify-content: center; /**horizontical*/
+  white-space: nowrap;
+  font-variant: small-caps;
+  border: 1px solid rgb(209, 209, 209);
+  background-color: rgb(250, 247, 247);
+  box-shadow: inset 5px 0 5px -5px #d8d8d8, inset -5px 0 5px -5px #cecece;
+}
+.navBarClass a {
+  text-decoration: none;
+  padding: 50px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.navBarClass li:hover {
+  background-color: #07e980;
+}
+
+.navBarClass a:hover {
+  text-decoration: none;
+}
+
+/*
+---------------------------------------------------------------------------------------------
+This section acts as a wrapper for the functional area of this site (excluding the "Topbar"). 
+It is made of 2 additional sections: 1) buttonSection. 2)displaySection.
+The outputs and inputs are handled in this section.
+*/
+#main-container {
+  display: flex;
+  height: 85%; /*the other 15% is reserved for the navigation bar (Topbar)*/
+}
+
+/*
+----------------------------------------------------------------------------------
+This section displays all buttons rendered by their components
+The number of buttons depends on the functional status of it's corresponding step. 
+Therefore, this section virtically stacks the buttons .
+*/
+#buttonSection {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+}
+
+#buttonSection button {
+  border-radius: 50px;
+  background: #141414;
+  color: #dfdedf;
+  width: 80%;
+  height: 5vh;
+  margin-bottom: 10px;
+  font-variant: small-caps;
+  border-style: outset;
+  border-width: 6px;
+  border-color: #000000;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+#buttonSection button:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background: #07e980;
+  color: black;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+}
+
+#displaySection {
+  display: flex;
+  width: 65%; /*restricting the display area to use 65% of the screen width. The other 35% is assigned to the buttonSection*/
+  overflow: auto; /*This applies to all elements except the background image of the home page. The background image is rendered with it's own CSS*/
+}
+
+#display-wrapper {
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
+/*--------------------------------------------------------------------*/
