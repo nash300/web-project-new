@@ -1,14 +1,28 @@
 import React, { useEffect } from "react";
 import "./index.css";
-import { useHandleActions } from "./hooks/useMyHooks";
+import { useState } from "react";
+import HomeDisplay from "./display_components/HomeDisplay";
+import DataPolicyDisplay from "./display_components/DataPolicyDisplay";
+import AboutDisplay from "./display_components/AboutDisplay";
+import FeaturesDisplay from "./display_components/FeaturesDisplay";
+import ButtonSection from "./button_components/buttonSection";
+import ButtonFunctions from "./button_components/buttonFunctions";
 
 const App = () => {
-  const { setToHomePage, displaySection, buttonSection, handleNavBtns } =
-    useHandleActions();
+  //_________________________Hooks_______________________________________
+  const [userType, setUserType] = useState("");
+  const [displaySection, setDisplaySection] = useState(<HomeDisplay />);
+  const { resetToHomeBtns } = ButtonFunctions();
 
-  useEffect(() => {
-    setToHomePage();
-  }, []);
+  // This function resets the navigation to the initial state
+  function resetToHomePage() {
+    {
+      resetToHomeBtns();
+      setUserType("");
+      setDisplaySection(<HomeDisplay />);
+    }
+  }
+  //_____________________________________________________________________
 
   return (
     <div id="pageWrapper">
@@ -63,11 +77,51 @@ const App = () => {
         </nav>
       </div>
       <div id="main-container">
-        <span id="buttonSection">{buttonSection}</span>
-        <span id="displaySection">{displaySection}</span>
+        <ButtonSection
+          setDisplaySection={setDisplaySection}
+          userType={userType}
+          setUserType={setUserType}
+        />
+        <div id="displaySection">{displaySection}</div>
       </div>
     </div>
   );
+
+  //
+  //
+  //_______________________________________________________________________________
+  //_____________________________ FUNCTIONS _______________________________________
+  //_______________________________________________________________________________
+  //
+  //
+  //----------------    NAVIGATION BAR   ---------------------
+  // This function handles the page behaviour when the user
+  // clicks on navigation bar buttons.
+  //----------------------------------------------------------
+  function handleNavBtns(elementID) {
+    switch (elementID) {
+      case "featuresBtn":
+        setDisplaySection(<FeaturesDisplay />);
+        resetToHomeBtns();
+
+        break;
+      case "dataPolicyBtn":
+        setDisplaySection(<DataPolicyDisplay />);
+        resetToHomeBtns();
+
+        break;
+      case "aboutBtn":
+        setDisplaySection(<AboutDisplay />);
+        resetToHomeBtns();
+
+        break;
+      default:
+        resetToHomePage();
+    }
+  }
+
+  //
+  //
 };
 
 export default App;
