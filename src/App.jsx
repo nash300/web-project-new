@@ -1,54 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
-import HomeDisplay from "./display_components/HomeDisplay";
-import DataPolicyDisplay from "./display_components/DataPolicyDisplay";
-import AboutDisplay from "./display_components/AboutDisplay";
-import FeaturesDisplay from "./display_components/FeaturesDisplay";
-import ButtonSection from "./button_components/buttonSection";
+import ButtonSection from "./button_section_components/buttonSection";
+import DisplaySection from "./display_section_components/DisplaySection";
+import { useDisplayOpperation } from "./display_section_components/useDisplayOpperation";
+import { useButtonOpperation } from "./button_section_components/useButtonOpperation";
 
 const App = () => {
-  //
-  //
-  // HOOKS
-  //____________________________________________________________________
+  const {
+    setDisplayToHome,
+    setDisplayToFeatures,
+    setDisplayToAbout,
+    setDisplayToDataPolicy,
+    displayOutput,
+  } = useDisplayOpperation();
+
+  useEffect(() => {
+    console.log("display changed in APP");
+  }, [displayOutput]);
+
+  const { buttonOutput, resetButtonOutput } = useButtonOpperation();
+
   const [userType, setUserType] = useState(null);
-  const [displaySection, setDisplaySection] = useState(<HomeDisplay />);
-
-  //
-  //
-  //
-  // FUNCTIONS
-  //_______________________________________________________________________________
-  // This function resets the navigation to the initial state
-
-  const resetToHomePage = () => {
-    setUserType("");
-    setDisplaySection(<HomeDisplay />);
-  };
-
-  //----------------    NAVIGATION BAR   ---------------------
-  // This function handles the page behaviour when the user
-  // clicks on navigation bar buttons.
-  //----------------------------------------------------------
-  function handleNavBtns(elementID) {
-    switch (elementID) {
-      case "featuresBtn":
-        setDisplaySection(<FeaturesDisplay />);
-
-        break;
-      case "dataPolicyBtn":
-        setDisplaySection(<DataPolicyDisplay />);
-
-        break;
-      case "aboutBtn":
-        setDisplaySection(<AboutDisplay />);
-
-        break;
-      default:
-        resetToHomePage();
-    }
-  }
-  //_____________________________________________________________________
 
   return (
     <div id="pageWrapper">
@@ -58,7 +30,10 @@ const App = () => {
             src="./src/images/logo.png"
             alt="the logo"
             className="home"
-            onClick={() => handleNavBtns("home")}
+            onClick={() => {
+              setDisplayToHome();
+              resetButtonOutput();
+            }}
           />
         </aside>
         <aside id="navSection">
@@ -70,7 +45,8 @@ const App = () => {
                   id="homeBtn"
                   className="home"
                   onClick={() => {
-                    handleNavBtns("home");
+                    setDisplayToHome();
+                    resetButtonOutput();
                   }}
                 >
                   Home
@@ -81,7 +57,10 @@ const App = () => {
                   href="#"
                   id="featuresBtn"
                   className="home"
-                  onClick={() => handleNavBtns("featuresBtn")}
+                  onClick={() => {
+                    setDisplayToFeatures();
+                    resetButtonOutput();
+                  }}
                 >
                   Features
                 </a>
@@ -91,7 +70,10 @@ const App = () => {
                   href="#"
                   id="dataPolicyBtn"
                   className="home"
-                  onClick={() => handleNavBtns("dataPolicyBtn")}
+                  onClick={() => {
+                    setDisplayToDataPolicy();
+                    resetButtonOutput();
+                  }}
                 >
                   Data policy
                 </a>
@@ -101,7 +83,10 @@ const App = () => {
                   href="#"
                   id="aboutBtn"
                   className="home"
-                  onClick={() => handleNavBtns("aboutBtn")}
+                  onClick={() => {
+                    setDisplayToAbout();
+                    resetButtonOutput();
+                  }}
                 >
                   About
                 </a>
@@ -112,9 +97,11 @@ const App = () => {
       </div>
       <div id="main-container">
         <div id="buttonSection">
-          <ButtonSection />
+          <ButtonSection buttonOutput={buttonOutput} />
         </div>
-        <div id="displaySection">{displaySection}</div>
+        <div id="displaySection">
+          <DisplaySection displayOutput={displayOutput} />
+        </div>
       </div>
     </div>
   );

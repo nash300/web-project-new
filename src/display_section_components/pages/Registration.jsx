@@ -1,8 +1,6 @@
-import React from "react";
-
-const RegistrationDisplay = () => {
+const Registration = () => {
   return (
-    <>
+    <span id="registration">
       <div id="buttonSection">
         <button>I Want To Learn</button>
         <button>I Want To Teach</button>
@@ -45,8 +43,8 @@ const RegistrationDisplay = () => {
           <input type="text" />
         </form>
       </div>
-    </>
+    </span>
   );
 };
 
-export default RegistrationDisplay;
+export default Registration;

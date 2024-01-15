@@ -162,13 +162,17 @@ Therefore, this section virtically stacks the buttons .
 
 #displaySection {
   display: flex;
-  width: 65%; /*restricting the display area to use 65% of the screen width. The other 35% is assigned to the buttonSection*/
-  overflow: auto; /*This applies to all elements except the background image of the home page. The background image is rendered with it's own CSS*/
+  width: 65%; /*The other 35% of the width is assigned to the buttonSection*/
 }
 
-#display-wrapper {
-  width: 75%;
-  margin-right: auto;
-  margin-left: auto;
+#displayContainer {
+  display: flex;
+
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  /*This applies to all elements except the background image of the home page. The background image is rendered with it's own CSS*/
+  overflow: auto;
 }
 /*--------------------------------------------------------------------*/

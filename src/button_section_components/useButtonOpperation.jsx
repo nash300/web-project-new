@@ -1,13 +1,21 @@
 import { useState, useEffect } from "react";
+import { useDisplayOpperation } from "../display_section_components/useDisplayOpperation";
 
 //-----------------------------------------------------------------------------
 
-export const useButtonOutput = () => {
+export const useButtonOpperation = () => {
+  const { setDisplayToHome } = useDisplayOpperation();
+
   //
   //
   //
   const letsBegin = (
-    <button key={"letsBegin"} onClick={() => handleLetsBeginClick()}>
+    <button
+      key={"letsBegin"}
+      onClick={() => {
+        handleLetsBeginClick();
+      }}
+    >
       Let's Begin !
     </button>
   );
@@ -73,8 +81,11 @@ export const useButtonOutput = () => {
   //
   //
 
-  const handleLetsBeginClick = () =>
-    setButtonOutput(() => [iWantToTeach, iWantToLearn]);
+  const handleLetsBeginClick = () => {
+    setButtonOutput([iWantToTeach, iWantToLearn]);
+    setDisplayToHome();
+    console.log("button executed");
+  };
 
   const handleIwantToTeachClick = () =>
     setButtonOutput(() => [iWantToRegister, searchForAstudent]);
@@ -102,7 +113,9 @@ export const useButtonOutput = () => {
   //
   //
   //
-  const resetButtonOutput = ([letsBegin]) => {};
+  const resetButtonOutput = () => {
+    setButtonOutput(() => [letsBegin]);
+  };
   //
   //
   //
