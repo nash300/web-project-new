@@ -1,25 +1,51 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
-import { useState } from "react";
 import HomeDisplay from "./display_components/HomeDisplay";
 import DataPolicyDisplay from "./display_components/DataPolicyDisplay";
 import AboutDisplay from "./display_components/AboutDisplay";
 import FeaturesDisplay from "./display_components/FeaturesDisplay";
 import ButtonSection from "./button_components/buttonSection";
-import ButtonFunctions from "./button_components/buttonFunctions";
 
 const App = () => {
-  //_________________________Hooks_______________________________________
+  //
+  //
+  // HOOKS
+  //____________________________________________________________________
   const [userType, setUserType] = useState("");
   const [displaySection, setDisplaySection] = useState(<HomeDisplay />);
-  const { resetToHomeBtns } = ButtonFunctions();
+
+  //
+  //
+  //
+  // FUNCTIONS
+  //_______________________________________________________________________________
 
   // This function resets the navigation to the initial state
-  function resetToHomePage() {
-    {
-      resetToHomeBtns();
-      setUserType("");
-      setDisplaySection(<HomeDisplay />);
+  const resetToHomePage = () => {
+    setUserType("");
+    setDisplaySection(<HomeDisplay />);
+  };
+
+  //----------------    NAVIGATION BAR   ---------------------
+  // This function handles the page behaviour when the user
+  // clicks on navigation bar buttons.
+  //----------------------------------------------------------
+  function handleNavBtns(elementID) {
+    switch (elementID) {
+      case "featuresBtn":
+        setDisplaySection(<FeaturesDisplay />);
+
+        break;
+      case "dataPolicyBtn":
+        setDisplaySection(<DataPolicyDisplay />);
+
+        break;
+      case "aboutBtn":
+        setDisplaySection(<AboutDisplay />);
+
+        break;
+      default:
+        resetToHomePage();
     }
   }
   //_____________________________________________________________________
@@ -41,7 +67,9 @@ const App = () => {
                 href="#"
                 id="homeBtn"
                 className="home"
-                onClick={() => handleNavBtns("home")}
+                onClick={() => {
+                  handleNavBtns("home");
+                }}
               >
                 Home
               </a>
@@ -86,42 +114,6 @@ const App = () => {
       </div>
     </div>
   );
-
-  //
-  //
-  //_______________________________________________________________________________
-  //_____________________________ FUNCTIONS _______________________________________
-  //_______________________________________________________________________________
-  //
-  //
-  //----------------    NAVIGATION BAR   ---------------------
-  // This function handles the page behaviour when the user
-  // clicks on navigation bar buttons.
-  //----------------------------------------------------------
-  function handleNavBtns(elementID) {
-    switch (elementID) {
-      case "featuresBtn":
-        setDisplaySection(<FeaturesDisplay />);
-        resetToHomeBtns();
-
-        break;
-      case "dataPolicyBtn":
-        setDisplaySection(<DataPolicyDisplay />);
-        resetToHomeBtns();
-
-        break;
-      case "aboutBtn":
-        setDisplaySection(<AboutDisplay />);
-        resetToHomeBtns();
-
-        break;
-      default:
-        resetToHomePage();
-    }
-  }
-
-  //
-  //
 };
 
 export default App;
