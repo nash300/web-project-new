@@ -11,7 +11,7 @@ const App = () => {
   //
   // HOOKS
   //____________________________________________________________________
-  const [userType, setUserType] = useState("");
+  const [userType, setUserType] = useState(null);
   const [displaySection, setDisplaySection] = useState(<HomeDisplay />);
 
   //
@@ -19,8 +19,8 @@ const App = () => {
   //
   // FUNCTIONS
   //_______________________________________________________________________________
-
   // This function resets the navigation to the initial state
+
   const resetToHomePage = () => {
     setUserType("");
     setDisplaySection(<HomeDisplay />);
@@ -53,63 +53,67 @@ const App = () => {
   return (
     <div id="pageWrapper">
       <div id="topBar">
-        <img
-          src="./src/images/logo.png"
-          alt="the logo"
-          id="logo"
-          className="home"
-          onClick={() => handleNavBtns("home")}
-        />
-        <nav id="navBar" className="navBarClass">
-          <ul>
-            <li>
-              <a
-                href="#"
-                id="homeBtn"
-                className="home"
-                onClick={() => {
-                  handleNavBtns("home");
-                }}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                id="featuresBtn"
-                onClick={() => handleNavBtns("featuresBtn")}
-              >
-                Features
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                id="dataPolicyBtn"
-                onClick={() => handleNavBtns("dataPolicyBtn")}
-              >
-                Data policy
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                id="aboutBtn"
-                onClick={() => handleNavBtns("aboutBtn")}
-              >
-                About
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <aside id="logoSection">
+          <img
+            src="./src/images/logo.png"
+            alt="the logo"
+            className="home"
+            onClick={() => handleNavBtns("home")}
+          />
+        </aside>
+        <aside id="navSection">
+          <nav id="navBar" className="navBarClass">
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  id="homeBtn"
+                  className="home"
+                  onClick={() => {
+                    handleNavBtns("home");
+                  }}
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  id="featuresBtn"
+                  className="home"
+                  onClick={() => handleNavBtns("featuresBtn")}
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  id="dataPolicyBtn"
+                  className="home"
+                  onClick={() => handleNavBtns("dataPolicyBtn")}
+                >
+                  Data policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  id="aboutBtn"
+                  className="home"
+                  onClick={() => handleNavBtns("aboutBtn")}
+                >
+                  About
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
       </div>
       <div id="main-container">
-        <ButtonSection
-          setDisplaySection={setDisplaySection}
-          userType={userType}
-          setUserType={setUserType}
-        />
+        <div id="buttonSection">
+          <ButtonSection />
+        </div>
         <div id="displaySection">{displaySection}</div>
       </div>
     </div>

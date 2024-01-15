@@ -63,6 +63,7 @@ export const useButtonOutput = () => {
 
   //
   //
+
   //
   ///////////////////    Button Output Hook       //////////////////////
   //--------------------------------------------------------------------
@@ -101,6 +102,7 @@ export const useButtonOutput = () => {
   //
   //
   //
+  const resetButtonOutput = ([letsBegin]) => {};
   //
   //
   //
@@ -108,9 +110,9 @@ export const useButtonOutput = () => {
   //
 
   return {
-    handleLetsBeginClick,
     buttonOutput,
-    setButtonOutput,
+    resetButtonOutput,
+    letsBegin,
   };
 };
 //---------------------------------------------------------------------------------

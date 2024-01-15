@@ -45,31 +45,32 @@ in a seperate file (Topbar.css)
 #topBar {
   display: block;
   height: 15%;
-  border-bottom: 2px solid #bdbdbd;
 }
-#logo {
+#logoSection {
+  display: flex;
   height: 80%;
+  background-color: white;
 }
 
-#logo img {
+#logoSection img {
   max-width: 100%;
   height: 100%;
 }
 
-#navBar {
+#navSection {
   display: flex;
   height: 20%;
-  max-width: 100%;
   justify-content: flex-end;
+}
+
+#navBar {
+  display: flex;
 }
 
 #navBar ul {
   display: flex;
   float: right;
-  flex: 1;
-  justify-content: flex-end;
   margin: 0px;
-  max-width: 25%;
 }
 
 .navBarClass li {
@@ -106,6 +107,7 @@ The outputs and inputs are handled in this section.
 #main-container {
   display: flex;
   height: 85%; /*the other 15% is reserved for the navigation bar (Topbar)*/
+  border-top: 1px solid rgb(204, 204, 204);
 }
 
 /*
@@ -116,20 +118,31 @@ Therefore, this section virtically stacks the buttons .
 */
 #buttonSection {
   display: flex;
-  flex-direction: column;
-  width: 35%;
+  /* flex-direction: column; */
+  width: 35%; /*75% of the width is reserved for the "Display section" */
   background-color: rgb(255, 255, 255);
-  align-items: center;
-  justify-content: center;
 }
 
-#buttonSection button {
+#buttonContainer {
+  display: flex;
+  flex-direction: column; /*stacks the content (buttons) verticaly*/
+  justify-content: center; /* Center vertically */
+  width: 90%;
+  height: 100%;
+  /* center the buttons with in 90% of the container*/
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#buttonContainer button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 50px;
   border-radius: 50px;
   background: #141414;
   color: #dfdedf;
-  width: 80%;
-  height: 5vh;
-  margin-bottom: 10px;
+
   font-variant: small-caps;
   border-style: outset;
   border-width: 6px;
@@ -138,7 +151,7 @@ Therefore, this section virtically stacks the buttons .
   overflow: hidden;
 }
 
-#buttonSection button:hover {
+#buttonContainer button:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   background: #07e980;
   color: black;

@@ -1,12 +1,10 @@
-import { useEffect } from "react";
 import { useButtonOutput } from "../button_components/buttonData";
 
 const ButtonSection = () => {
-  const { buttonOutput } = useButtonOutput();
+  const { buttonOutput, resetButtonOutput } = useButtonOutput();
 
-  //
-  // returning the button section to the website
-  return <div id="buttonSection">{buttonOutput}</div>;
+  // Invoking the function to render its result
+  return <div id="buttonContainer">{buttonOutput}</div>;
 };
 
 export default ButtonSection;
