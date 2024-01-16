@@ -31,7 +31,7 @@ const Registration = () => {
           <option value=""></option>
         </select>
         <label>About</label>
-        <input type="text" id="aboutTxtInput" />
+        <textarea type="text" rows="4" cols="50" />
       </form>
     </span>
   );

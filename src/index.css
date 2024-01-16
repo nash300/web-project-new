@@ -34,8 +34,8 @@ This assigns the total screen area for this website*/
 #pageWrapper {
   height: 100vh;
   max-width: 1200px;
-  border: 1px solid black;
   margin: auto;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
 }
 
 /*
@@ -122,7 +122,7 @@ Therefore, this section virtically stacks the buttons .
   /* flex-direction: column; */
   width: 35%; /*75% of the width is reserved for the "Display section" */
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 #buttonContainer {
@@ -141,24 +141,23 @@ Therefore, this section virtically stacks the buttons .
   width: 100%;
   height: 50px;
   border-radius: 50px;
-  background: #141414;
-  color: #dfdedf;
-
   font-variant: small-caps;
-  border-style: outset;
-  border-width: 6px;
-  border-color: #000000;
+  background: #07e980;
+  color: black;
   font-size: 1rem;
   overflow: hidden;
+  border: none;
+  box-shadow: 0 0 5px rgb(58, 58, 58);
 }
 
 #buttonContainer button:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  background: #07e980;
-  color: black;
   cursor: pointer;
-  border: none;
-  font-size: 1.2rem;
+  box-shadow: 0 0 25px rgb(92, 255, 60);
+  background: #07e980;
+  border-color: #bdc019;
+  color: rgb(53, 53, 53);
+
+  font-weight: bold;
 }
 
 #displaySection {
@@ -182,34 +181,49 @@ Therefore, this section virtically stacks the buttons .
 }
 
 #registrationPage {
+  flex-direction: column;
   width: 50%;
   height: 100%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  font-variant: small-caps;
+  font-weight: bold;
 }
 
 #registrationPage form {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  height: 90%;
+  height: 80%;
   border-radius: 5px;
   padding-top: 15%;
   padding-bottom: 15%;
 }
 
 #registrationPage label {
+  margin-top: auto;
+  margin-bottom: 3px;
 }
 
 #registrationPage input {
-  height: 30px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgb(187, 187, 187);
 }
 
 #registrationPage select {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  height: 25px;
+  box-shadow: 0 0 5px rgb(187, 187, 187);
 }
 
-#aboutTxtInput {
-  height: 200px;
+#registrationPage textarea {
+  height: 20%;
+  resize: vertical;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgb(187, 187, 187);
 }
