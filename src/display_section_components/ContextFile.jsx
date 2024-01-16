@@ -4,12 +4,14 @@ import About from "./pages/About";
 import DataPolicy from "./pages/DataPolicy";
 import { createContext, useState, useContext } from "react";
 import Registration from "./pages/Registration";
+import Search from "./pages/Search";
+import SearchResults from "./pages/SearchResults";
 
 export const MyContexts = createContext();
 
 export const ContextProviders = ({ children }) => {
   //**************************   DISPLAY          ******************************* */
-  const [displayOutput, setDisplayOutput] = useState(Registration);
+  const [displayOutput, setDisplayOutput] = useState(Home);
 
   const setDisplayToHome = () => {
     setDisplayOutput(Home);
@@ -29,6 +31,14 @@ export const ContextProviders = ({ children }) => {
 
   const setDisplayToRegister = () => {
     setDisplayOutput(Registration);
+  };
+
+  const setDisplayToSearch = () => {
+    setDisplayOutput(Search);
+  };
+
+  const setDisplayToSearchResults = () => {
+    setDisplayOutput(SearchResults);
   };
 
   //**************************   BUTTON       ******************************* */
@@ -94,6 +104,12 @@ export const ContextProviders = ({ children }) => {
     </button>
   );
 
+  const viewProfile = () => {
+    <button key={"viewProfile"} onClick={() => handleViewProfileClick()}>
+      View Profile
+    </button>;
+  };
+
   //
   //
   ///////////////////    Button HOOK       //////////////////////
@@ -118,16 +134,29 @@ export const ContextProviders = ({ children }) => {
     setButtonOutput(() => [Register]), setDisplayToRegister();
   };
 
-  const handleSearchForAteacherClick = () => setButtonOutput(() => [search]);
+  const handleSearchForAteacherClick = () => {
+    setButtonOutput(() => [search]);
+    setDisplayToSearch();
+  };
 
-  const handleSearchForAstudentClick = () => setButtonOutput(() => [search]);
+  const handleSearchForAstudentClick = () => {
+    setButtonOutput(() => [search]);
+    setDisplayToSearch();
+  };
 
-  const handleSearchClick = () => setButtonOutput(() => [newSearch]);
+  const handleSearchClick = () => {
+    setButtonOutput(() => [newSearch]);
+    setDisplayToSearchResults();
+  };
 
   //not done yet
   const handleRegisterClick = () => setButtonOutput(() => [search]);
 
   const handleNewSearchClick = () => setButtonOutput(() => [search]);
+
+  const handleViewProfileClick = () => {
+    alert("handleViewProfileClick");
+  };
 
   //
   const resetButtonOutput = () => {

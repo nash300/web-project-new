@@ -1,12 +1,18 @@
 /*
-This document includes stylings for the main layout. 
-Stylings for the navigation section (Topbar) are included in a different file called Topbar.css.
+- This CSS file includes stylings for the main sections of the page.
+- Structuring the website's main layout.
+- Styles for individual sections that mount to the "Display Section" are stored in a separate file called " pageStyles.css".
+----------------------------------------------------------------------------------------------------------------------------
 */
 #root {
   background-color: rgb(255, 255, 255);
   width: 100vw;
   height: 100vh;
 }
+
+/*
+************************|   GENERAL ELEMENTS IN THE "APP" COMPONENT   |*************************
+*/
 body {
   height: 100%;
   margin: 0;
@@ -15,12 +21,13 @@ body {
 }
 
 h2 {
-  background-color: rgb(92, 197, 78);
+  background: #283739;
   height: auto;
   text-align: left;
   color: white;
   box-shadow: 0 0 5px rgb(68, 68, 68);
   padding-left: 3%;
+  font-variant: small-caps;
 }
 
 h3,
@@ -29,8 +36,48 @@ li {
   list-style-type: none;
 }
 
-/*---------------------------------------------------
-This assigns the total screen area for this website*/
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
+label {
+  margin-top: auto;
+  margin-bottom: 3px;
+}
+
+input {
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgb(187, 187, 187);
+}
+
+select {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 25px;
+  box-shadow: 0 0 5px rgb(187, 187, 187);
+}
+
+textarea {
+  height: 20%;
+  resize: vertical;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgb(187, 187, 187);
+}
+
+/*
+**********************|   SECTION::  PAGE WRAPPER    |************************* 
+- This assigns the total screen area for this website
+*/
 #pageWrapper {
   height: 100vh;
   max-width: 1200px;
@@ -39,9 +86,8 @@ This assigns the total screen area for this website*/
 }
 
 /*
--------------------------------------------------------------------------------------------- 
-This include the main layout settings for the topbar. More specific styling has been assigned 
-in a seperate file (Topbar.css)
+**********************|  SECTION:: TOPBAR    |***********************
+- This section includes: the logo section + navigation menu buttons 
 */
 #topBar {
   display: block;
@@ -75,6 +121,8 @@ in a seperate file (Topbar.css)
 }
 
 .navBarClass li {
+  border-radius: 5px;
+
   display: flex;
   flex: 1; /* equal width*/
   align-items: center; /*virtical*/
@@ -82,46 +130,51 @@ in a seperate file (Topbar.css)
   white-space: nowrap;
   font-variant: small-caps;
   border: 1px solid rgb(209, 209, 209);
-  background-color: rgb(250, 247, 247);
+  background: #889b33a9;
   box-shadow: inset 5px 0 5px -5px #d8d8d8, inset -5px 0 5px -5px #cecece;
 }
 .navBarClass a {
   text-decoration: none;
   padding: 50px;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
+  color: rgb(255, 255, 255);
 }
 .navBarClass li:hover {
-  background-color: #07e980;
+  background: #a2c11c;
 }
 
 .navBarClass a:hover {
   text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 
-/*
----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------
+**************************|    SECTION:: MAIN CONTAINER     |*******************************
+--------------------------------------------------------------------------------------------
 This section acts as a wrapper for the functional area of this site (excluding the "Topbar"). 
-It is made of 2 additional sections: 1) buttonSection. 2)displaySection.
+It is made of 2 additional sections: 1) ButtonSection. 2)DisplaySection.
 The outputs and inputs are handled in this section.
-*/
+___________________________________________________________________________________________*/
 #main-container {
   display: flex;
   height: 85%; /*the other 15% is reserved for the navigation bar (Topbar)*/
   border-top: 1px solid rgb(204, 204, 204);
 }
 
-/*
-----------------------------------------------------------------------------------
-This section displays all buttons rendered by their components
+
+
+
+/*-------------------------------------------------------------------------------
+**********************|    SECTION:: BUTTON SECTION     |************************
+---------------------------------------------------------------------------------
+This section is dedicated only for displaying buttons. 
 The number of buttons depends on the functional status of it's corresponding step. 
 Therefore, this section virtically stacks the buttons .
-*/
+________________________________________________________________________________*/
 #buttonSection {
   display: flex;
   /* flex-direction: column; */
   width: 35%; /*75% of the width is reserved for the "Display section" */
-  background-color: rgb(255, 255, 255);
+  background: #2c5d63;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -136,13 +189,13 @@ Therefore, this section virtically stacks the buttons .
 }
 
 #buttonContainer button {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 100%;
   height: 50px;
   border-radius: 50px;
   font-variant: small-caps;
-  background: #07e980;
+  background: #a2c11c;
   color: black;
   font-size: 1rem;
   overflow: hidden;
@@ -153,16 +206,22 @@ Therefore, this section virtically stacks the buttons .
 #buttonContainer button:hover {
   cursor: pointer;
   box-shadow: 0 0 25px rgb(92, 255, 60);
-  background: #07e980;
+  background: #41506b;
   border-color: #bdc019;
-  color: rgb(53, 53, 53);
+  color: rgb(255, 255, 255);
 
   font-weight: bold;
 }
 
+/*-------------------------------------------------------------------------------
+*********************|     SECTION:: DISPLAY SECTION    |************************
+---------------------------------------------------------------------------------
+This section handles the components that renders according to the users behaviour.
+________________________________________________________________________________*/
 #displaySection {
   display: flex;
   width: 65%; /*The other 35% of the width is assigned to the buttonSection*/
+  background: #e2e2dd;
 }
 
 #displayContainer {
@@ -170,60 +229,12 @@ Therefore, this section virtically stacks the buttons .
   padding: 0;
   width: 100%;
   height: 100%;
-  /*This applies to all elements except the background image of the home page. The background image is rendered with it's own CSS*/
   overflow: auto;
+  /* Automatic overflow applies to all elements except the background image of the home page. 
+  The home page component's background image has it's own styling sent as "props"*/
 }
-/*--------------------------------------------------------------------*/
-/* Pages*/
+/*
 
-.navPage {
-  padding: 50px;
-}
 
-#registrationPage {
-  flex-direction: column;
-  width: 50%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  font-variant: small-caps;
-  font-weight: bold;
-}
 
-#registrationPage form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 80%;
-  border-radius: 5px;
-  padding-top: 15%;
-  padding-bottom: 15%;
-}
 
-#registrationPage label {
-  margin-top: auto;
-  margin-bottom: 3px;
-}
-
-#registrationPage input {
-  height: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 5px rgb(187, 187, 187);
-}
-
-#registrationPage select {
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  height: 25px;
-  box-shadow: 0 0 5px rgb(187, 187, 187);
-}
-
-#registrationPage textarea {
-  height: 20%;
-  resize: vertical;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 5px rgb(187, 187, 187);
-}

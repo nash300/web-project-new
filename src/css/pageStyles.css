@@ -1,0 +1,32 @@
+/*
+This CSS file holds styles  for the elements that renders in the "Display Section"
+*/
+
+.navPage {
+  padding: 50px;
+}
+
+#registrationFormWrapper {
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  margin: auto;
+
+  font-weight: bold;
+}
+
+#searchFormWrapper {
+  flex-direction: column;
+  width: 50%;
+  height: 40%;
+  margin: auto;
+  font-weight: bold;
+}
+
+#searchResultWrapper {
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  font-weight: bold;
+}

@@ -1,17 +1,9 @@
-const Registration = () => {
+import React from "react";
+
+const Search = () => {
   return (
-    <span id="registrationFormWrapper">
+    <span id="searchFormWrapper">
       <form action="">
-        <label>Name</label>
-        <input type="text" />
-        <label>Email</label>
-        <input type="text" />
-        <label>Country</label>
-        <select name="" id="">
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
         <label>Subject</label>
         <select name="" id="">
           <option value=""></option>
@@ -24,17 +16,17 @@ const Registration = () => {
           <option value=""></option>
           <option value=""></option>
         </select>
-        <label>Platform</label>
+        <label>
+          Platform (<em>Optional</em>)
+        </label>
         <select name="" id="">
           <option value=""></option>
           <option value=""></option>
           <option value=""></option>
         </select>
-        <label>About</label>
-        <textarea type="text" rows="4" cols="50" />
       </form>
     </span>
   );
 };
 
-export default Registration;
+export default Search;

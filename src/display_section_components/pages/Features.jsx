@@ -1,3 +1,5 @@
+import "../../css/pageStyles.css";
+
 const Features = () => {
   return (
     <span id="features" className="navPage">

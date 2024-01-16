@@ -2,25 +2,15 @@ import React, { useContext } from "react";
 import "./index.css";
 import ButtonSection from "./button_section_components/buttonSection";
 import DisplaySection from "./display_section_components/DisplaySection";
-import {
-  MyContexts,
-  ContextProviders,
-} from "./display_section_components/ContextFile";
+import { MyContexts } from "./display_section_components/ContextFile";
 
 const App = () => {
   const {
-    setDisplayOutput,
     setDisplayToHome,
     setDisplayToFeatures,
     setDisplayToAbout,
     setDisplayToDataPolicy,
-    buttonOutput,
-    handleIwantToRegisterClick,
-    handleSearchForAteacherClick,
-    handleSearchClick,
     resetButtonOutput,
-    handleLetsBeginClick,
-    handleRegisterClick,
   } = useContext(MyContexts);
 
   return (
