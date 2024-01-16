@@ -1,26 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import "./index.css";
 import ButtonSection from "./button_section_components/buttonSection";
 import DisplaySection from "./display_section_components/DisplaySection";
-import { useDisplayOpperation } from "./display_section_components/useDisplayOpperation";
-import { useButtonOpperation } from "./button_section_components/useButtonOpperation";
+import {
+  MyContexts,
+  ContextProviders,
+} from "./display_section_components/ContextFile";
 
 const App = () => {
   const {
+    setDisplayOutput,
     setDisplayToHome,
     setDisplayToFeatures,
     setDisplayToAbout,
     setDisplayToDataPolicy,
-    displayOutput,
-  } = useDisplayOpperation();
-
-  useEffect(() => {
-    console.log("display changed in APP");
-  }, [displayOutput]);
-
-  const { buttonOutput, resetButtonOutput } = useButtonOpperation();
-
-  const [userType, setUserType] = useState(null);
+    buttonOutput,
+    handleIwantToRegisterClick,
+    handleSearchForAteacherClick,
+    handleSearchClick,
+    resetButtonOutput,
+    handleLetsBeginClick,
+    handleRegisterClick,
+  } = useContext(MyContexts);
 
   return (
     <div id="pageWrapper">
@@ -97,10 +98,10 @@ const App = () => {
       </div>
       <div id="main-container">
         <div id="buttonSection">
-          <ButtonSection buttonOutput={buttonOutput} />
+          <ButtonSection />
         </div>
         <div id="displaySection">
-          <DisplaySection displayOutput={displayOutput} />
+          <DisplaySection />
         </div>
       </div>
     </div>

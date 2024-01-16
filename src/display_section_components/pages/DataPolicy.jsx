@@ -1,6 +1,6 @@
 const DataPolicy = () => {
   return (
-    <span id="dataPolicy">
+    <span id="dataPolicy" className="navPage">
       <h2>Data Policy</h2>
       <h3>fugiat</h3>
       andae non delectus sectetur adipisicing elit. Aspernatur labore sequi

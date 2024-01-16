@@ -1,14 +1,39 @@
-import { useState, useEffect } from "react";
-import { useDisplayOpperation } from "../display_section_components/useDisplayOpperation";
+import Home from "./pages/Home";
+import Features from "./pages/Features";
+import About from "./pages/About";
+import DataPolicy from "./pages/DataPolicy";
+import { createContext, useState, useContext } from "react";
+import Registration from "./pages/Registration";
 
-//-----------------------------------------------------------------------------
+export const MyContexts = createContext();
 
-export const useButtonOpperation = () => {
-  const { setDisplayToHome } = useDisplayOpperation();
+export const ContextProviders = ({ children }) => {
+  //**************************   DISPLAY          ******************************* */
+  const [displayOutput, setDisplayOutput] = useState(Registration);
 
-  //
-  //
-  //
+  const setDisplayToHome = () => {
+    setDisplayOutput(Home);
+  };
+
+  const setDisplayToFeatures = () => {
+    setDisplayOutput(Features);
+  };
+
+  const setDisplayToAbout = () => {
+    setDisplayOutput(About);
+  };
+
+  const setDisplayToDataPolicy = () => {
+    setDisplayOutput(DataPolicy);
+  };
+
+  const setDisplayToRegister = () => {
+    setDisplayOutput(Registration);
+  };
+
+  //**************************   BUTTON       ******************************* */
+
+  //Buttons
   const letsBegin = (
     <button
       key={"letsBegin"}
@@ -71,20 +96,16 @@ export const useButtonOpperation = () => {
 
   //
   //
-
-  //
-  ///////////////////    Button Output Hook       //////////////////////
+  ///////////////////    Button HOOK       //////////////////////
   //--------------------------------------------------------------------
   const [buttonOutput, setButtonOutput] = useState(() => [letsBegin]);
   //--------------------------------------------------------------------
   //
   //
-  //
-
+  // Button handler functions
   const handleLetsBeginClick = () => {
     setButtonOutput([iWantToTeach, iWantToLearn]);
     setDisplayToHome();
-    console.log("button executed");
   };
 
   const handleIwantToTeachClick = () =>
@@ -93,7 +114,9 @@ export const useButtonOpperation = () => {
   const handleIwantToLearnClick = () =>
     setButtonOutput(() => [iWantToRegister, searchForAteacher]);
 
-  const handleIwantToRegisterClick = () => setButtonOutput(() => [Register]);
+  const handleIwantToRegisterClick = () => {
+    setButtonOutput(() => [Register]), setDisplayToRegister();
+  };
 
   const handleSearchForAteacherClick = () => setButtonOutput(() => [search]);
 
@@ -101,34 +124,36 @@ export const useButtonOpperation = () => {
 
   const handleSearchClick = () => setButtonOutput(() => [newSearch]);
 
-  //
-  //
-  //
-
   //not done yet
   const handleRegisterClick = () => setButtonOutput(() => [search]);
 
   const handleNewSearchClick = () => setButtonOutput(() => [search]);
 
   //
-  //
-  //
   const resetButtonOutput = () => {
     setButtonOutput(() => [letsBegin]);
   };
   //
   //
-  //
-  //
-  //
-
-  return {
-    buttonOutput,
-    resetButtonOutput,
-    letsBegin,
-  };
+  return (
+    <MyContexts.Provider
+      value={{
+        displayOutput,
+        setDisplayOutput,
+        setDisplayToHome,
+        setDisplayToFeatures,
+        setDisplayToAbout,
+        setDisplayToDataPolicy,
+        buttonOutput,
+        handleIwantToRegisterClick,
+        handleSearchForAteacherClick,
+        handleSearchClick,
+        resetButtonOutput,
+        handleLetsBeginClick,
+        handleRegisterClick,
+      }}
+    >
+      {children}
+    </MyContexts.Provider>
+  );
 };
-//---------------------------------------------------------------------------------
-//
-//
-//

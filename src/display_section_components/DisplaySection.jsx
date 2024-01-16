@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import React, { useContext } from "react";
+import { MyContexts } from "./ContextFile";
 
-const DisplaySection = ({ displayOutput }) => {
-  useEffect(() => {
-    console.log("Display COMPONENT updated");
-  }, [displayOutput]);
+const DisplaySection = () => {
+  const { displayOutput } = useContext(MyContexts);
 
   return <div id="displayContainer">{displayOutput}</div>;
 };
