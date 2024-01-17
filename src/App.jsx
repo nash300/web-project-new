@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import "./index.css";
+import "./css/pageStyles.css";
+
 import ButtonSection from "./button_section_components/buttonSection";
 import DisplaySection from "./display_section_components/DisplaySection";
-import { MyContexts } from "./display_section_components/ContextFile";
+import { MyContexts } from "./contexts/ContextFile";
 
 const App = () => {
   const {

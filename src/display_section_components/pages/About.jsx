@@ -1,4 +1,3 @@
-import "../../css/pageStyles.css";
 
 const About = () => {
   return (

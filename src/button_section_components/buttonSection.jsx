@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { MyContexts } from "../display_section_components/ContextFile";
+import { MyContexts } from "../contexts/ContextFile";
 
 const ButtonSection = () => {
   const { buttonOutput } = useContext(MyContexts);

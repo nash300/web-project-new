@@ -1,5 +1,3 @@
-import "../../css/pageStyles.css";
-
 const DataPolicy = () => {
   return (
     <span id="dataPolicy" className="navPage">

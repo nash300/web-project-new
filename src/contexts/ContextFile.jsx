@@ -1,11 +1,12 @@
-import Home from "./pages/Home";
-import Features from "./pages/Features";
-import About from "./pages/About";
-import DataPolicy from "./pages/DataPolicy";
+import Home from "../display_section_components/pages/Home";
+import Features from "../display_section_components/pages/Features";
+import About from "../display_section_components/pages/About";
+import DataPolicy from "../display_section_components/pages/DataPolicy";
 import { createContext, useState, useContext } from "react";
-import Registration from "./pages/Registration";
-import Search from "./pages/Search";
-import SearchResults from "./pages/SearchResults";
+import Registration from "../display_section_components/pages/Registration";
+import Search from "../display_section_components/pages/Search";
+import SearchResults from "../display_section_components/pages/SearchResults";
+import Profile from "./../display_section_components/pages/Profile";
 
 export const MyContexts = createContext();
 
@@ -39,6 +40,10 @@ export const ContextProviders = ({ children }) => {
 
   const setDisplayToSearchResults = () => {
     setDisplayOutput(SearchResults);
+  };
+
+  const setDisplayToProfile = () => {
+    setDisplayOutput(Profile);
   };
 
   //**************************   BUTTON       ******************************* */
@@ -104,12 +109,6 @@ export const ContextProviders = ({ children }) => {
     </button>
   );
 
-  const viewProfile = () => {
-    <button key={"viewProfile"} onClick={() => handleViewProfileClick()}>
-      View Profile
-    </button>;
-  };
-
   //
   //
   ///////////////////    Button HOOK       //////////////////////
@@ -150,12 +149,14 @@ export const ContextProviders = ({ children }) => {
   };
 
   //not done yet
-  const handleRegisterClick = () => setButtonOutput(() => [search]);
+  const handleRegisterClick = () => {
+    setButtonOutput(() => [searchForAstudent, searchForAteacher]);
+    setDisplayToProfile();
+  };
 
-  const handleNewSearchClick = () => setButtonOutput(() => [search]);
-
-  const handleViewProfileClick = () => {
-    alert("handleViewProfileClick");
+  const handleNewSearchClick = () => {
+    setButtonOutput(() => [search]);
+    setDisplayToSearch();
   };
 
   //

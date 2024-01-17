@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { MyContexts } from "./ContextFile";
+import { MyContexts } from "../contexts/ContextFile";
 
 const DisplaySection = () => {
   const { displayOutput } = useContext(MyContexts);
