@@ -1,4 +1,3 @@
-import Home from "../display_section_components/pages/Home";
 import Features from "../display_section_components/pages/Features";
 import About from "../display_section_components/pages/About";
 import DataPolicy from "../display_section_components/pages/DataPolicy";
@@ -12,7 +11,7 @@ export const MyContexts = createContext();
 
 export const ContextProviders = ({ children }) => {
   //**************************   DISPLAY          ******************************* */
-  const [displayOutput, setDisplayOutput] = useState(Home);
+  const [displayOutput, setDisplayOutput] = useState(null);
 
   const setDisplayToHome = () => {
     setDisplayOutput(Home);

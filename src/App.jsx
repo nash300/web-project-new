@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./index.css";
 import "./css/pageStyles.css";
+import bgVideo from "./images/bgv.mp4";
 
 import ButtonSection from "./button_section_components/buttonSection";
 import DisplaySection from "./display_section_components/DisplaySection";
@@ -16,7 +17,11 @@ const App = () => {
   } = useContext(MyContexts);
 
   return (
-    <div id="pageWrapper">
+    <div id="pageWrapper" className="video-background">
+      <video muted autoPlay loop>
+        <source src={bgVideo} type="video/mp4" />
+      </video>
+
       <div id="topBar">
         <aside id="logoSection">
           <img
@@ -88,11 +93,12 @@ const App = () => {
           </nav>
         </aside>
       </div>
+
       <div id="main-container">
         <div id="buttonSection">
           <ButtonSection />
         </div>
-        <div id="displaySection">
+        <div id="displaySection" className="display-section">
           <DisplaySection />
         </div>
       </div>

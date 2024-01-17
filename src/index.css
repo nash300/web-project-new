@@ -1,34 +1,27 @@
-/*
-- This CSS file includes stylings for the main sections of the page.
-- Structuring the website's main layout.
-- Styles for individual sections that mount to the "Display Section" are stored in a separate file called " pageStyles.css".
-----------------------------------------------------------------------------------------------------------------------------
-*/
 #root {
-  background-color: rgb(255, 255, 255);
   width: 100vw;
   height: 100vh;
+  display: flex;
 }
 
-/*
-************************|   GENERAL ELEMENTS IN THE "APP" COMPONENT   |*************************
-*/
 body {
   height: 100%;
-  margin: 0;
+  width: 100%;
   overflow: hidden;
   background-color: rgb(255, 255, 255);
+  margin: 0px;
+  padding: 0px;
 }
 
-h1,h2 {
+h1,
+h2 {
   background: #283739;
   height: auto;
   text-align: left;
   color: white;
   box-shadow: 0 0 5px rgb(68, 68, 68);
   padding-left: 3%;
-  font-variant: small-caps;  
-
+  font-variant: small-caps;
 }
 
 h3,
@@ -75,72 +68,87 @@ textarea {
   box-shadow: 0 0 5px rgb(187, 187, 187);
 }
 
-/*
-**********************|   SECTION::  PAGE WRAPPER    |************************* 
-- This assigns the total screen area for this website
-*/
 #pageWrapper {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  max-width: 1200px;
-  margin: auto;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+  width: 100vw;
 }
 
-/*
-**********************|  SECTION:: TOPBAR    |***********************
-- This section includes: the logo section + navigation menu buttons 
-*/
-#topBar {
-  display: block;
-  height: 15%;
+#pageWrapper video {
+  width: 100%;
 }
+
+#topBar {
+  display: flex;
+  flex-direction: column;
+  height: 15%;
+  z-index: 1;
+  opacity: 0.8;
+  align-items: center;
+}
+
 #logoSection {
   display: flex;
-  height: 80%;
-  background-color: rgb(255, 255, 255);
+  height: 75%;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  background-color: white;
 }
 
 #logoSection img {
   max-width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 #navSection {
   display: flex;
-  height: 20%;
-  justify-content: flex-end;
+  height: 25%;
+  width: 100%;
 }
 
 #navBar {
   display: flex;
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
 }
 
 #navBar ul {
   display: flex;
-  float: right;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
 }
 
 .navBarClass li {
-  border-radius: 5px;
-
   display: flex;
-  flex: 1; /* equal width*/
-  align-items: center; /*virtical*/
-  justify-content: center; /**horizontical*/
+  flex: 1; /* equal width */
+  align-items: center; /* vertical */
+  justify-content: center; /* horizontal */
   white-space: nowrap;
   font-variant: small-caps;
-  border: 1px solid rgb(209, 209, 209);
-  background: #889b33a9;
-  box-shadow: inset 5px 0 5px -5px #d8d8d8, inset -5px 0 5px -5px #cecece;
+  background: #3f4b0da9;
+  padding: 10px;
+  border: 1px solid rgb(83, 83, 83);
 }
+
 .navBarClass a {
+  display: flex;
   text-decoration: none;
-  padding: 50px;
   color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center; /* vertical */
 }
+
 .navBarClass li:hover {
   background: #a2c11c;
+  cursor: pointer;
 }
 
 .navBarClass a:hover {
@@ -150,9 +158,9 @@ textarea {
 
 button {
   margin-top: 10px;
-  margin-bottom: 10px;  
-  width: 100%;
+  margin-bottom: 10px;
   height: 50px;
+  width: 100%;
   border-radius: 50px;
   font-variant: small-caps;
   background: #0c0c0c;
@@ -163,81 +171,45 @@ button {
   box-shadow: 0 0 5px rgb(58, 58, 58);
 }
 
- button:hover {
+button:hover {
   cursor: pointer;
-  box-shadow: 0 0 25px rgb(92, 255, 60);
-  background: #41506b;
-  border-color: #bdc019;
+  box-shadow: 0 0 15px #bdc019;
   color: rgb(255, 255, 255);
-
   font-weight: bold;
 }
 
-/*------------------------------------------------------------------------------------------
-**************************|    SECTION:: MAIN CONTAINER     |*******************************
---------------------------------------------------------------------------------------------
-This section acts as a wrapper for the functional area of this site (excluding the "Topbar"). 
-It is made of 2 additional sections: 1) ButtonSection. 2)DisplaySection.
-The outputs and inputs are handled in this section.
-___________________________________________________________________________________________*/
 #main-container {
   display: flex;
-  height: 85%; /*the other 15% is reserved for the navigation bar (Topbar)*/
-  border-top: 1px solid rgb(204, 204, 204);
+  height: 100%;
 }
 
-
-
-
-/*-------------------------------------------------------------------------------
-**********************|    SECTION:: BUTTON SECTION     |************************
----------------------------------------------------------------------------------
-This section is dedicated only for displaying buttons. 
-The number of buttons depends on the functional status of it's corresponding step. 
-Therefore, this section virtically stacks the buttons .
-________________________________________________________________________________*/
 #buttonSection {
   display: flex;
-  /* flex-direction: column; */
-  width: 35%; /*75% of the width is reserved for the "Display section" */
-  background: #2c5d63;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
 }
 
 #buttonContainer {
   display: flex;
-  flex-direction: column; /*stacks the content (buttons) verticaly*/
-  justify-content: center; /* Center vertically */
-  width: 90%;
-  height: 100%;
-  /* center the buttons with in 90% of the container*/
-  margin: auto;
+  width: 80%;
+  flex-direction: column;
 }
 
-
-
-/*-------------------------------------------------------------------------------
-*********************|     SECTION:: DISPLAY SECTION    |************************
----------------------------------------------------------------------------------
-This section handles the components that renders according to the users behaviour.
-________________________________________________________________________________*/
 #displaySection {
-  display: flex;
-  width: 65%; /*The other 35% of the width is assigned to the buttonSection*/
-  background: #e2e2dd;
+  width: 70%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
-#displayContainer {
-  display: flex;
-  padding: 0;
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  /* Automatic overflow applies to all elements except the background image of the home page. 
-  The home page component's background image has it's own styling sent as "props"*/
+  object-fit: cover;
+  z-index: -1;
 }
-/*
-
-
-
-
