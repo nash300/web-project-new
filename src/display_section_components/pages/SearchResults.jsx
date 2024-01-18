@@ -2,7 +2,7 @@ import ResultElement from "./ResultElement";
 
 const SearchResults = () => {
   return (
-    <span id="searchResultWrapper">
+    <div id="searchResultWrapper">
       <ResultElement />
       <ResultElement />
       <ResultElement />
@@ -15,7 +15,7 @@ const SearchResults = () => {
       <ResultElement />
       <ResultElement />
       <ResultElement />
-    </span>
+    </div>
   );
 };
 

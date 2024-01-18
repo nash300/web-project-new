@@ -1,7 +1,6 @@
-
 const About = () => {
   return (
-    <span id="about" className="navPage">
+    <div className="NavBarPage">
       <h2>Who Are We?</h2>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ex
       repudiandae non delectus mollitia reprehenderit minus voluptas aspernatur.
@@ -142,7 +141,7 @@ const About = () => {
       assumenda consectetur ad, itaque blanditiis, ut consequatur earum eaque
       quam quis, obcaecati officiis animi corrupti impedit! Quis iure voluptatum
       ducimus?
-    </span>
+    </div>
   );
 };
 

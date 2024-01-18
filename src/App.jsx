@@ -22,26 +22,23 @@ const App = () => {
         <source src={bgVideo} type="video/mp4" />
       </video>
 
-      <div id="topBar">
-        <aside id="logoSection">
+      <div className="TopBar">
+        <aside id="logo-section">
           <img
             src="./src/images/logo.png"
             alt="the logo"
-            className="home"
             onClick={() => {
               setDisplayToHome();
               resetButtonOutput();
             }}
           />
         </aside>
-        <aside id="navSection">
-          <nav id="navBar" className="navBarClass">
+        <aside className="NavSection">
+          <nav id="navigation-bar">
             <ul>
               <li>
                 <a
                   href="#"
-                  id="homeBtn"
-                  className="home"
                   onClick={() => {
                     setDisplayToHome();
                     resetButtonOutput();
@@ -53,8 +50,6 @@ const App = () => {
               <li>
                 <a
                   href="#"
-                  id="featuresBtn"
-                  className="home"
                   onClick={() => {
                     setDisplayToFeatures();
                     resetButtonOutput();
@@ -66,8 +61,6 @@ const App = () => {
               <li>
                 <a
                   href="#"
-                  id="dataPolicyBtn"
-                  className="home"
                   onClick={() => {
                     setDisplayToDataPolicy();
                     resetButtonOutput();
@@ -79,8 +72,6 @@ const App = () => {
               <li>
                 <a
                   href="#"
-                  id="aboutBtn"
-                  className="home"
                   onClick={() => {
                     setDisplayToAbout();
                     resetButtonOutput();
@@ -93,12 +84,11 @@ const App = () => {
           </nav>
         </aside>
       </div>
-
       <div id="main-container">
-        <div id="buttonSection">
+        <div id="button-section">
           <ButtonSection />
         </div>
-        <div id="displaySection" className="display-section">
+        <div id="display-section">
           <DisplaySection />
         </div>
       </div>

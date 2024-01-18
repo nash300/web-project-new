@@ -1,6 +1,6 @@
 const Features = () => {
   return (
-    <span id="features" className="navPage">
+    <div className="NavBarPage">
       <h2>Current Version</h2>
       andae non delectus sectetur adipisicing elit. Aspernatur labore sequi
       dolor quos est, autem vero fugiat eaque sed eos illum, dolorem id dolor
@@ -27,7 +27,7 @@ const Features = () => {
         <li>Calendar</li>
         <li>Feedback</li>
       </ul>
-    </span>
+    </div>
   );
 };
 

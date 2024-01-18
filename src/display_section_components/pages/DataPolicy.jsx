@@ -1,6 +1,6 @@
 const DataPolicy = () => {
   return (
-    <span id="dataPolicy" className="navPage">
+    <div className="NavBarPage">
       <h2>Data Policy</h2>
       <h3>fugiat</h3>
       andae non delectus sectetur adipisicing elit. Aspernatur labore sequi
@@ -203,7 +203,7 @@ const DataPolicy = () => {
       assumenda consectetur ad, itaque blanditiis, ut consequatur earum eaque
       quam quis, obcaecatiblanditiis, ut consequatur earum eaque quam quis,
       obcaecati officiis animi corrupti impedit! Quis iure voluptatum ducimus?
-    </span>
+    </div>
   );
 };
 export default DataPolicy;

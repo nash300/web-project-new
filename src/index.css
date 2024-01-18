@@ -1,27 +1,25 @@
-#root {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background-color: rgb(255, 255, 255);
-  margin: 0px;
-  padding: 0px;
-}
-
+/******************************************************************************************************
+ This CSS file contains all styles applied to the generell page layout. 
+ Styles for the individual display components are stored in "pageStyles.css" file in the Src directory.
+******************************************************************************************************/
+/******************************************************************************************************************************/
+/*    GENERELL ELEMENTS                                                                                                      
+/******************************************************************************************************************************/
 h1,
 h2 {
-  background: #283739;
+  display: flex;
+  background: #283739d0;
   height: auto;
   text-align: left;
   color: white;
-  box-shadow: 0 0 5px rgb(68, 68, 68);
+  box-shadow: 0 0 15px rgb(131, 131, 131);
   padding-left: 3%;
   font-variant: small-caps;
+  max-height: 4vw;
+  width: 80%;
+  align-items: center;
+  border-bottom-right-radius: 100px;
+  text-wrap: nowrap;
 }
 
 h3,
@@ -30,20 +28,18 @@ li {
   list-style-type: none;
 }
 
+/* This settings apply for all forms in this site*/
 form {
   display: flex;
   flex-direction: column;
+  font-weight: bold;
   justify-content: center;
-  width: 100%;
-  height: 80%;
-  border-radius: 5px;
-  padding-top: 15%;
-  padding-bottom: 15%;
+  align-content: center;
+  width: 70%;
 }
 
 label {
-  margin-top: auto;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
 }
 
 input {
@@ -54,11 +50,18 @@ input {
 }
 
 select {
+  display: flex;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
   height: 25px;
+  margin-bottom: 20px;
+  width: 100%;
   box-shadow: 0 0 5px rgb(187, 187, 187);
+}
+
+option {
+  border: 1px solid rgb(8, 8, 8);
 }
 
 textarea {
@@ -68,100 +71,150 @@ textarea {
   box-shadow: 0 0 5px rgb(187, 187, 187);
 }
 
+/*-----------------------------------------------------------*/
+#root {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Settings for the Home screen background video */
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(15px);
+}
+
+/* This element is used to wrapp the total website*/
 #pageWrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 #pageWrapper video {
   width: 100%;
 }
 
-#topBar {
-  display: flex;
+/*********************************************************************************************************************************************/
+/*    TOPBAR SECTION 
+/*********************************************************************************************************************************************/
+/* This is the top section of the web-site which includes the logo and the navigation menu buttons 
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+.TopBar {
   flex-direction: column;
   height: 15%;
-  z-index: 1;
   opacity: 0.8;
   align-items: center;
 }
 
-#logoSection {
+#logo-section {
   display: flex;
   height: 75%;
-  margin: 0;
-  width: 100%;
   justify-content: center;
   background-color: white;
 }
 
-#logoSection img {
+#logo-section img {
   max-width: 100%;
   height: 100%;
   cursor: pointer;
 }
 
-#navSection {
+.NavSection {
   display: flex;
   height: 25%;
-  width: 100%;
 }
 
-#navBar {
+#navigation-bar {
   display: flex;
   width: 100%;
-  height: 100%;
-
-  padding: 0;
 }
 
-#navBar ul {
+#navigation-bar ul {
   display: flex;
   margin: 0;
   padding: 0;
   flex: 1;
 }
 
-.navBarClass li {
+.NavSection li {
   display: flex;
   flex: 1; /* equal width */
   align-items: center; /* vertical */
   justify-content: center; /* horizontal */
   white-space: nowrap;
   font-variant: small-caps;
-  background: #3f4b0da9;
-  padding: 10px;
+  background: #000000;
   border: 1px solid rgb(83, 83, 83);
+  pointer-events: auto;
 }
 
-.navBarClass a {
+.NavSection a {
   display: flex;
   text-decoration: none;
   color: rgb(255, 255, 255);
-  width: 100%;
-  height: 100%;
   justify-content: center;
   align-items: center; /* vertical */
 }
 
-.navBarClass li:hover {
-  background: #a2c11c;
+.NavSection li:hover {
+  background: #a3c11c9d;
+  box-shadow: 0 0 15px #bdc019;
   cursor: pointer;
 }
 
-.navBarClass a:hover {
+.NavSection a:hover {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
 
-button {
+#main-container {
+  display: flex;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*********************************************************************************************************************************************/
+/*    BUTTON SECTION 
+/*********************************************************************************************************************************************/
+/* The buttons are displayed in this section. 
+/* This section uses 1/3 of the total display width.
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+#button-section {
+  display: flex;
+  flex: 1; /* takes 1/3 of the total display width*/
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+/* This element is provided by the <ButtonSection/> component*/
+#buttonContainer {
+  display: grid;
+  width: 80%;
+  height: auto;
+}
+
+#buttonContainer button {
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
   height: 50px;
-  width: 100%;
-  border-radius: 50px;
+  border-radius: 10px;
   font-variant: small-caps;
   background: #0c0c0c;
   color: rgb(255, 255, 255);
@@ -171,45 +224,30 @@ button {
   box-shadow: 0 0 5px rgb(58, 58, 58);
 }
 
-button:hover {
+#buttonContainer button:hover {
   cursor: pointer;
   box-shadow: 0 0 15px #bdc019;
   color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
-#main-container {
-  display: flex;
-  height: 100%;
-}
+/***************************************************************************************************************************/
+/*   DISPLAY SECTION 
+/***************************************************************************************************************************/
+/* This section is used to display the outputs/results 
+/* This section uses 2/3 of the total display width*/
+/*-------------------------------------------------------------------------------------------------------------------------*/
 
-#buttonSection {
+#display-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 30%;
+  flex: 2; /* takes 2/3 of the total display width*/
   background: rgba(0, 0, 0, 0.5);
-  align-items: center;
+  max-height: 100%;
 }
 
-#buttonContainer {
-  display: flex;
-  width: 80%;
-  flex-direction: column;
-}
-
-#displaySection {
-  width: 70%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-}
-
-.video-background video {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* this element is delivered by the <DisplaySection/> component*/
+#display-container {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
 }

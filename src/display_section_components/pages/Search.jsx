@@ -1,7 +1,6 @@
-
 const Search = () => {
   return (
-    <span id="searchFormWrapper">
+    <div id="search-form">
       <form action="">
         <label>Subject</label>
         <select name="" id="">
@@ -24,7 +23,7 @@ const Search = () => {
           <option value=""></option>
         </select>
       </form>
-    </span>
+    </div>
   );
 };
 

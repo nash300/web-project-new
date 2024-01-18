@@ -6,13 +6,42 @@ import Registration from "../display_section_components/pages/Registration";
 import Search from "../display_section_components/pages/Search";
 import SearchResults from "../display_section_components/pages/SearchResults";
 import Profile from "./../display_section_components/pages/Profile";
+import Home from "./../display_section_components/pages/Home";
 
 export const MyContexts = createContext();
 
 export const ContextProviders = ({ children }) => {
-  //**************************   DISPLAY          ******************************* */
-  const [displayOutput, setDisplayOutput] = useState(null);
+  //
+  //
+  //__________________________________________________________
+  // useState for tracking the user type: ex: student/teacher |
+  //__________________________________________________________|
+  const [userType, setUserType] = useState(null);
 
+  const setToStudent = () => {
+    setUserType("student");
+  };
+  const setToTeacher = () => {
+    setUserType("teacher");
+  };
+
+  //
+  //
+  //
+  //**********************************************************************************************************************************************
+  // DISPLAY SECTION  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  //**********************************************************************************************************************************************
+  //
+  //_______________________________________________________________________________
+  //   This useState stores the outputs to be displayed in the "Display Section"   |
+  //_______________________________________________________________________________|
+  const [displayOutput, setDisplayOutput] = useState(Home);
+  //
+  //___________________________________________________________________
+  // DISPLAY SECTION FUNCTIONS
+  //___________________________________________________________________
+  // These functions are used to mount components into the display area
+  //-------------------------------------------------------------------
   const setDisplayToHome = () => {
     setDisplayOutput(Home);
   };
@@ -45,9 +74,16 @@ export const ContextProviders = ({ children }) => {
     setDisplayOutput(Profile);
   };
 
-  //**************************   BUTTON       ******************************* */
-
-  //Buttons
+  //
+  //***********************************************************************************************************************************************
+  //  BUTTON SECTION  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  //***********************************************************************************************************************************************
+  //
+  //_______________________________________________________________________
+  // BUTTONS
+  //_______________________________________________________________________
+  // These are the buttons used in the "Button Section"
+  //_______________________________________________________________________
   const letsBegin = (
     <button
       key={"letsBegin"}
@@ -108,15 +144,17 @@ export const ContextProviders = ({ children }) => {
     </button>
   );
 
-  //
-  //
-  ///////////////////    Button HOOK       //////////////////////
-  //--------------------------------------------------------------------
+  //____________________________________________________________________
+  //        This useState stores the buttons to be displayed            |
+  //____________________________________________________________________|
   const [buttonOutput, setButtonOutput] = useState(() => [letsBegin]);
-  //--------------------------------------------------------------------
   //
   //
-  // Button handler functions
+  //____________________________________________________________________
+  // DISPLAY SECTION FUNCTIONS
+  //____________________________________________________________________
+  // Definitions Of the onClick functions
+  //____________________________________________________________________
   const handleLetsBeginClick = () => {
     setButtonOutput([iWantToTeach, iWantToLearn]);
     setDisplayToHome();
@@ -158,7 +196,7 @@ export const ContextProviders = ({ children }) => {
     setDisplayToSearch();
   };
 
-  //
+  // sets the button section to it's initial state.
   const resetButtonOutput = () => {
     setButtonOutput(() => [letsBegin]);
   };
@@ -180,6 +218,9 @@ export const ContextProviders = ({ children }) => {
         resetButtonOutput,
         handleLetsBeginClick,
         handleRegisterClick,
+        userType,
+        setToStudent,
+        setToTeacher,
       }}
     >
       {children}

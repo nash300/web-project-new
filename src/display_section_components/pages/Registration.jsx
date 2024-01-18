@@ -1,6 +1,6 @@
 const Registration = () => {
   return (
-    <span id="registrationFormWrapper">
+    <div id="registrationFormWrapper">
       <form action="">
         <label>Name</label>
         <input type="text" />
@@ -33,7 +33,7 @@ const Registration = () => {
         <label>About</label>
         <textarea type="text" rows="4" cols="50" />
       </form>
-    </span>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <span id="profile-page-wrapper">
+    <div id="profile-page-wrapper">
       <h1>User Profile</h1>
       <div>Mark Christian</div>
       <div>
@@ -26,7 +26,7 @@ const Profile = () => {
           </aside>
         </aside>
       </div>
-    </span>
+    </div>
   );
 };
 
