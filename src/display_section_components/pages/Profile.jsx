@@ -2,29 +2,32 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <div id="profile-page-wrapper">
-      <h1>User Profile</h1>
-      <div>Mark Christian</div>
+    <div id="user-profile">
       <div>
-        <h2>Country :</h2>
+        <h4 id="name">Mark Christian</h4>
+      </div>
+
+      <div>
+        <h4>From</h4>
         <p>Spain</p>
       </div>
+
       <div>
-        <h2>Subject :</h2>
-        <p> Probability & Statistics </p>
+        <h4>Subject</h4>
+        <p>Probability & Statistics</p>
       </div>
-      <div>
-        <h2>Contact Info :</h2>
-        <aside>
-          <aside>
-            <h3>Platform :</h3>
-            <p>Skype</p>
-          </aside>
-          <aside>
-            <h3>User ID :</h3>
-            <p>MySkyprId1234</p>
-          </aside>
-        </aside>
+
+      <div id="contact-info">
+        <h4>Contact Info</h4>
+        <div>
+          <h5>Platform</h5>
+          <p>Skype</p>
+        </div>
+
+        <div>
+          <h5>User ID: </h5>
+          <p>MySkyprId1234</p>
+        </div>
       </div>
     </div>
   );

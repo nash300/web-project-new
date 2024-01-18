@@ -2,40 +2,37 @@
  This CSS file contains all styles applied to the generell page layout. 
  Styles for the individual display components are stored in "pageStyles.css" file in the Src directory.
 ******************************************************************************************************/
+/*
+/*
 /******************************************************************************************************************************/
 /*    GENERELL ELEMENTS                                                                                                      
 /******************************************************************************************************************************/
 h1,
 h2 {
-  display: flex;
-  background: #283739d0;
-  height: auto;
-  text-align: left;
+  background: #0000007c;
   color: white;
-  box-shadow: 0 0 15px rgb(131, 131, 131);
-  padding-left: 3%;
-  font-variant: small-caps;
-  max-height: 4vw;
-  width: 80%;
-  align-items: center;
-  border-bottom-right-radius: 100px;
-  text-wrap: nowrap;
 }
 
-h3,
+h3 {
+  text-decoration: underline;
+}
+
 li {
   text-transform: capitalize;
   list-style-type: none;
 }
 
-/* This settings apply for all forms in this site*/
+/***************************************************
+/*  FORMS
+/***************************************************
+/* These settings apply for all forms in this site*/
 form {
   display: flex;
   flex-direction: column;
   font-weight: bold;
   justify-content: center;
   align-content: center;
-  width: 70%;
+  width: 30vw;
 }
 
 label {
@@ -47,6 +44,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 0 5px rgb(187, 187, 187);
+  margin-bottom: 20px;
 }
 
 select {
@@ -82,9 +80,14 @@ body {
   display: flex;
   margin: 0px;
   padding: 0px;
+  font-variant: small-caps;
 }
 
 /* Settings for the Home screen background video */
+/* This is a copyright free video. Downloaded from "Pixabay"
+/* https://pixabay.com/videos/woman-model-notebook-book-creator-130645/
+*/
+
 .video-background video {
   position: absolute;
   top: 0;
@@ -93,7 +96,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: blur(15px);
+  filter: blur(5px);
 }
 
 /* This element is used to wrapp the total website*/
@@ -221,7 +224,7 @@ body {
   font-size: 1rem;
   overflow: hidden;
   border: none;
-  box-shadow: 0 0 5px rgb(58, 58, 58);
+  box-shadow: 0 0 10px rgb(20, 20, 20);
 }
 
 #buttonContainer button:hover {

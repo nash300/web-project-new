@@ -1,24 +1,24 @@
 const Registration = () => {
   return (
-    <div id="registrationFormWrapper">
+    <div id="registration-form">
       <form action="">
-        <label>Name</label>
+        <label>Name *</label>
         <input type="text" />
-        <label>Email</label>
+        <label>Email *</label>
         <input type="text" />
-        <label>Country</label>
+        <label>Country *</label>
         <select name="" id="">
           <option value=""></option>
           <option value=""></option>
           <option value=""></option>
         </select>
-        <label>Subject</label>
+        <label>Subject *</label>
         <select name="" id="">
           <option value=""></option>
           <option value=""></option>
           <option value=""></option>
         </select>
-        <label>Discipline</label>
+        <label>Discipline *</label>
         <select name="" id="">
           <option value=""></option>
           <option value=""></option>

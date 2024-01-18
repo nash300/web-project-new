@@ -1,10 +1,12 @@
-import React from "react";
+/*This is the home-page. The text in this page is animated using CSS*/
 
 const Home = () => {
   return (
     <div id="home">
-      <p>"The best way to learn is to teach"</p> <br />
-      <p>— Frank Oppenheimer</p>
+      <p>
+        "The best way to learn is to teach" <br />
+        <i>-Frank Oppenheimer</i>
+      </p>
     </div>
   );
 };
