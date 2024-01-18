@@ -96,3 +96,75 @@ ___________________________________________
 #user-profile #name {
   font-size: 40px;
 }
+
+/* 
+====================================================================================
+ResultElement.jsx
+This custom component is used to wrap brief user details in the search results page. 
+Each <ResultElement/> mounts one user to the result page.
+____________________________________________________________________________________
+*/
+#search-result-page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+}
+
+#result-element {
+  display: flex;
+  background-color: rgba(147, 190, 48, 0.37);
+  max-height: 150px;
+  margin: 10px 100px 10px 100px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgb(20, 20, 20);
+}
+
+#result-element #info-section {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  text-overflow: clip;
+}
+#result-element #info-section #title {
+  font-size: 20px;
+  padding-left: 50px;
+  padding-top: 5px;
+  height: 20%;
+  font-weight: bold;
+}
+#result-element #info-section #description {
+  padding: 1px 5px 0px 50px;
+  height: 80%;
+  text-overflow: hidden;
+  font: "Fira Sans", sans-serif;
+}
+
+#result-element #btn-section {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#result-element #btn-section button {
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  background: #0c0c0c;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  box-shadow: 0 0 10px rgb(20, 20, 20);
+}
+
+#result-element #btn-section button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px #111110;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
