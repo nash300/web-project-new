@@ -14,6 +14,7 @@ const App = () => {
     setDisplayToAbout,
     setDisplayToDataPolicy,
     resetButtonOutput,
+    masterReset,
   } = useContext(MyContexts);
 
   return (
@@ -28,8 +29,7 @@ const App = () => {
             src="./src/images/logo.png"
             alt="the logo"
             onClick={() => {
-              setDisplayToHome();
-              resetButtonOutput();
+              masterReset();
             }}
           />
         </aside>
@@ -40,8 +40,7 @@ const App = () => {
                 <a
                   href="#"
                   onClick={() => {
-                    setDisplayToHome();
-                    resetButtonOutput();
+                    masterReset();
                   }}
                 >
                   Home

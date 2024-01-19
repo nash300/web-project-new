@@ -6,7 +6,7 @@ const Registration = () => {
         <input type="text" />
         <label>Email *</label>
         <input type="text" />
-        <label>Country *</label>
+        <label>Country</label>
         <select name="" id="">
           <option value=""></option>
           <option value=""></option>
@@ -24,12 +24,14 @@ const Registration = () => {
           <option value=""></option>
           <option value=""></option>
         </select>
-        <label>Platform</label>
+        <label>Platform *</label>
         <select name="" id="">
           <option value=""></option>
           <option value=""></option>
           <option value=""></option>
         </select>
+        <label>User ID *</label>
+        <input type="text" />
         <label>About</label>
         <textarea type="text" rows="4" cols="50" />
       </form>

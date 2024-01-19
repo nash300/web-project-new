@@ -112,14 +112,15 @@ ________________________________________________________________________________
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
+  height: 100%;
+  overflow: scroll;
 }
 
 #result-element {
   display: flex;
   background-color: rgba(147, 190, 48, 0.37);
-  max-height: 150px;
+  height: 150px;
   margin: 10px 100px 10px 100px;
-  overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 0 10px rgb(20, 20, 20);
 }
@@ -129,6 +130,7 @@ ________________________________________________________________________________
   flex-direction: column;
   width: 80%;
   text-overflow: clip;
+  overflow: hidden;
 }
 #result-element #info-section #title {
   font-size: 20px;

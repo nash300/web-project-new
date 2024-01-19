@@ -1,4 +1,8 @@
+import { MyContexts } from "../../contexts/ContextFile";
+import { useContext } from "react";
+
 const ResultElement = () => {
+  const { ViewProfile } = useContext(MyContexts);
   return (
     <div id="result-element">
       <div id="info-section">
@@ -31,7 +35,7 @@ const ResultElement = () => {
         </span>
       </div>
       <div id="btn-section">
-        <button id="btn">view Profile</button>
+        <ViewProfile />
       </div>
     </div>
   );
