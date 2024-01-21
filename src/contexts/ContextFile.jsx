@@ -35,7 +35,7 @@ export const ContextProviders = ({ children }) => {
   //*******************************************************************************************************
   //
   //______________________________________________________________________________________________
-  // USESTATE FOR DISPLAY SECTION
+  // STATE FOR DISPLAY SECTION
   // - This useState stores the active display element which is displayed in the "Display Section"
   // - Only the static pages are handled in this
   //______________________________________________________________________________________________
@@ -155,7 +155,7 @@ export const ContextProviders = ({ children }) => {
   };
 
   //____________________________________________________________________
-  //  USESTATE FOR HOLDING THE ACTIVE BUTTONS
+  //  STATE FOR HOLDING THE ACTIVE BUTTONS
   // - This useState holds the activated button(s) at a given dialog mask
   //____________________________________________________________________
   const [buttonOutput, setButtonOutput] = useState(() => [letsBegin]);
