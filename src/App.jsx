@@ -3,25 +3,27 @@ import "./index.css";
 import "./css/pageStyles.css";
 import bgVideo from "./images/bgv.mp4";
 
-import ButtonSection from "./button_section_components/buttonSection";
-import DisplaySection from "./display_section_components/DisplaySection";
 import TopBar from "./components/TopBar";
+import MainContainer from "./components/Section_components/MainContainer";
+import { useState } from "react";
 
 const App = () => {
+  // State to store the message received from TopBar
+  const [messageFromTopBar, setMessageFromTopBar] = useState(null);
+
+  // Function to receive the message from TopBar and set it in state
+  const receiveMessageFromTopBar = (message) => {
+    setMessageFromTopBar(message);
+  };
   return (
     <>
       <div id="pageWrapper" className="video-background">
         <video muted autoPlay loop>
           <source src={bgVideo} type="video/mp4" />
         </video>
-        <TopBar />
+        <TopBar sendMessageToMainContainer={receiveMessageFromTopBar} />
         <main id="main-container">
-          <div id="button-section">
-            <ButtonSection />
-          </div>
-          <div id="display-section">
-            <DisplaySection />
-          </div>
+          <MainContainer messageFromTopBar={messageFromTopBar} />
         </main>
       </div>
     </>

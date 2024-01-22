@@ -31,7 +31,7 @@ const ResultElement = () => {
         </span>
       </div>
       <div id="btn-section">
-        <ViewProfile />
+        <button>View Profile</button>
       </div>
     </div>
   );

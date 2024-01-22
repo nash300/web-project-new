@@ -96,7 +96,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: blur(5px);
+  filter: brightness(50%) blur(5px);
 }
 
 /* This element is used to wrapp the total website*/
@@ -206,13 +206,13 @@ body {
 }
 
 /* This element is provided by the <ButtonSection/> component*/
-#buttonContainer {
+#button-container {
   display: grid;
   width: 80%;
   height: auto;
 }
 
-#buttonContainer button {
+#button-container button {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -227,7 +227,7 @@ body {
   box-shadow: 0 0 10px rgb(20, 20, 20);
 }
 
-#buttonContainer button:hover {
+#button-container button:hover {
   cursor: pointer;
   box-shadow: 0 0 15px #bdc019;
   color: rgb(255, 255, 255);
@@ -245,7 +245,6 @@ body {
   display: flex;
   flex-direction: column;
   flex: 2; /* takes 2/3 of the total display width*/
-  background: rgba(0, 0, 0, 0.5);
   max-height: 100%;
   max-width: 100%;
 }
