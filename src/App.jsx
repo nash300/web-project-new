@@ -8,12 +8,12 @@ import MainContainer from "./components/Section_components/MainContainer";
 import { useState } from "react";
 
 const App = () => {
-  // State to store the message received from TopBar
-  const [messageFromTopBar, setMessageFromTopBar] = useState(null);
+  // Stores the message received from the `TopBar` component.
+  const [btnIdFromTopBar, setBtnIdFromTopBar] = useState(null);
 
-  // Function to receive the message from TopBar and set it in state
-  const receiveMessageFromTopBar = (message) => {
-    setMessageFromTopBar(message);
+  // Handles incoming messages from the `TopBar` component and updates the corresponding state.
+  const receiveBtnIdFromTopBar = (buttonId) => {
+    setBtnIdFromTopBar(buttonId);
   };
   return (
     <>
@@ -21,9 +21,9 @@ const App = () => {
         <video muted autoPlay loop>
           <source src={bgVideo} type="video/mp4" />
         </video>
-        <TopBar sendMessageToMainContainer={receiveMessageFromTopBar} />
+        <TopBar sendBtnIdToMainContainer={receiveBtnIdFromTopBar} />
         <main id="main-container">
-          <MainContainer messageFromTopBar={messageFromTopBar} />
+          <MainContainer messageFromTopBar={btnIdFromTopBar} />
         </main>
       </div>
     </>
