@@ -23,7 +23,7 @@ const App = () => {
         </video>
         <TopBar sendBtnIdToMainContainer={receiveBtnIdFromTopBar} />
         <main id="main-container">
-          <MainContainer messageFromTopBar={btnIdFromTopBar} />
+          <MainContainer navBtn={btnIdFromTopBar} />
         </main>
       </div>
     </>
