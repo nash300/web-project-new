@@ -35,11 +35,12 @@ form {
   width: 30vw;
 }
 
-label {
-  margin-bottom: 10px;
+form label {
+  display: flex;
+  flex-direction: column;
 }
 
-input {
+form input {
   height: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -47,7 +48,7 @@ input {
   margin-bottom: 20px;
 }
 
-select {
+form select {
   display: flex;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -58,12 +59,13 @@ select {
   box-shadow: 0 0 5px rgb(187, 187, 187);
 }
 
-option {
+form option {
   border: 1px solid rgb(8, 8, 8);
 }
 
-textarea {
-  height: 20%;
+form textarea {
+  display: flex;
+  height: 150px;
   resize: vertical;
   border: 1px solid #ccc;
   box-shadow: 0 0 5px rgb(187, 187, 187);
@@ -212,7 +214,7 @@ body {
   height: auto;
 }
 
-#button-container button {
+button {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -227,7 +229,7 @@ body {
   box-shadow: 0 0 10px rgb(20, 20, 20);
 }
 
-#button-container button:hover {
+button:hover {
   cursor: pointer;
   box-shadow: 0 0 15px #bdc019;
   color: rgb(255, 255, 255);

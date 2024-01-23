@@ -5,14 +5,13 @@
 // Due to the tight integration between these sections, all definitions for buttons, button click handlers, and display handling functions are centralized within this component.
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Search from "../Search";
 import Registration from "./../Registration";
 import Profile from "./../Profile";
 import SearchResults from "./../SearchResults";
 import HomeDisplay from "../Home";
 import Features from "../Features";
-import { useEffect } from "react";
 import DataPolicy from "./../DataPolicy";
 import About from "./../About";
 //
@@ -90,9 +89,7 @@ const MainContainer = ({ navBtn }) => {
   const iWantToRegisterClick = () => {
     setUserType((prevUserType) => {
       setDisplayElement(<Registration userType={prevUserType} />);
-      setVisibleButtons([
-        <RegisterBtn key={"RegisterBtn"} onClick={registerClick} />,
-      ]);
+      setVisibleButtons();
       return prevUserType;
     });
   };
@@ -107,20 +104,6 @@ const MainContainer = ({ navBtn }) => {
     setDisplayElement(Search);
     setVisibleButtons([<SearchBtn key={"SearchBtn"} onClick={searchClick} />]);
     setUserType("teacher");
-  };
-
-  const registerClick = () => {
-    setDisplayElement(Profile);
-    setVisibleButtons([
-      <SearchForAstudentBtn
-        key={"SearchForAstudentBtn"}
-        onClick={searchForAstudentClick}
-      />,
-      <SearchForAteacherBtn
-        key={"SearchForAteacherBtn"}
-        onClick={searchForAteacherClick}
-      />,
-    ]);
   };
 
   const searchClick = () => {
@@ -154,9 +137,7 @@ const MainContainer = ({ navBtn }) => {
   const SearchForAteacherBtn = ({ onClick }) => (
     <button onClick={onClick}>Search for a teacher</button>
   );
-  const RegisterBtn = ({ onClick }) => (
-    <button onClick={onClick}>Register</button>
-  );
+
   const SearchBtn = ({ onClick }) => <button onClick={onClick}>Search</button>;
   const NewSearchBtn = ({ onClick }) => (
     <button onClick={onClick}>New Search</button>

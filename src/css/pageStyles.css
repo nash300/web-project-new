@@ -170,3 +170,24 @@ ________________________________________________________________________________
   color: rgb(255, 255, 255);
   font-weight: bold;
 }
+
+/* 
+==================================================================
+This span is dynamically rendered after a successful registration.
+__________________________________________________________________
+ */
+#register-confirmation-msg {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  background: rgba(146, 139, 139, 0.452);
+
+  box-shadow: 0 0 10px rgb(20, 20, 20);
+}
+#register-confirmation-msg * {
+  background: none;
+  color: rgb(32, 41, 36);
+  text-align: center;
+}
