@@ -4,8 +4,10 @@ import "./css/pageStyles.css";
 import bgVideo from "./images/bgv.mp4";
 
 import TopBar from "./components/TopBar";
-import MainContainer from "./components/Section_components/MainContainer";
 import { useState } from "react";
+import ButtonSection from "./components/Section_components/ButtonSection";
+import DisplaySection from "./components/Section_components/DisplaySection";
+
 
 const App = () => {
   // Stores the message received from the `TopBar` component.
@@ -23,7 +25,8 @@ const App = () => {
         </video>
         <TopBar sendBtnIdToMainContainer={receiveBtnIdFromTopBar} />
         <main id="main-container">
-          <MainContainer navBtn={btnIdFromTopBar} />
+          <ButtonSection btnIdFromTopBar={btnIdFromTopBar} />
+          <DisplaySection btnIdFromTopBar={btnIdFromTopBar} />
         </main>
       </div>
     </>

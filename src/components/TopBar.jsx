@@ -1,25 +1,18 @@
 // This is the `TopBar` component, which is made the following elements:
 // 1. A logo
 // 2. A navigation menu
-// The navigation menu's onClick events are handled by a callback function provided by the `App` component.
-// When a button is clicked, the callback function sends a string containing the unique ID of the clicked button to the `App` component.
-// This ID is then passed to the `MainContainer` as a prop.
-// In the `MainContainer`, a function assigns the corresponding display element based on the button ID.
-// Using unique IDs for buttons ensures that the appropriate display element is re-rendered when a button is clicked.
-//--------------------------------------------------------------------------------------------------------------------------------------
+// The navigation menu's onClick functions are stored in a contextProvider.
+//-------------------------------------------------------------------------
 
-import { useState } from "react";
+import React, { useContext } from "react";
+import { CommonContext } from "../context_files/commonContext";
 
-const TopBar = ({ sendBtnIdToMainContainer }) => {
+const TopBar = () => {
+  // -Importing the onClick functions from the commonContext file
+  const { resetToHome, featuresClick, dataPolicyClick, aboutClick } =
+    useContext(CommonContext);
   //
-  // This state maintains a counter that is used to generate unique IDs for button names in the callback function.
-  const [counter, setCounter] = useState(0);
 
-  const handleButtonClick = (buttonName) => {
-    // The counter is used to generate unique IDs for button names, ensuring that the corresponding display element is re-rendered when a button is clicked.
-    sendBtnIdToMainContainer(buttonName + " " + counter);
-    setCounter(counter + 1);
-  };
   return (
     <>
       <header className="TopBar">
@@ -27,29 +20,29 @@ const TopBar = ({ sendBtnIdToMainContainer }) => {
           <img
             src="./src/images/logo.png"
             alt="the logo"
-            onClick={() => handleButtonClick("navHome")}
+            onClick={resetToHome}
           />
         </aside>
         <aside className="NavSection">
           <nav id="navigation-bar">
             <ul>
               <li>
-                <a href="#" onClick={() => handleButtonClick("navHome")}>
+                <a href="#" onClick={resetToHome}>
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" onClick={() => handleButtonClick("navFeatures")}>
+                <a href="#" onClick={featuresClick}>
                   Features
                 </a>
               </li>
               <li>
-                <a href="#" onClick={() => handleButtonClick("navDatapolicy")}>
+                <a href="#" onClick={dataPolicyClick}>
                   Data policy
                 </a>
               </li>
               <li>
-                <a href="#" onClick={() => handleButtonClick("navAbout")}>
+                <a href="#" onClick={aboutClick}>
                   About
                 </a>
               </li>
