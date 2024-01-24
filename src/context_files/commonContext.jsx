@@ -12,6 +12,8 @@ import About from "../components/About";
 import Features from "../components/Features";
 import DataPolicy from "../components/DataPolicy";
 import Registration from "../components/Registration";
+import Search from "../components/Search";
+
 // Importing the buttons (Button components)
 import {
   IwantToLearnBtn,
@@ -35,6 +37,7 @@ export const CommonContextProvider = ({ children }) => {
   // - Keeps track of the user type.
   //___________________________________________________
   const [userType, setUserType] = useState(null);
+  console.log("User type :", userType);
 
   //**************************************************************************************
   // STATE:  CURRENT DISPLAY COMPONENT
@@ -125,26 +128,20 @@ export const CommonContextProvider = ({ children }) => {
   };
 
   // Dialog flow button: ("I want to register" button)
-  // The sub-functions are wrapped in a setUserType function to ensure the current registered user type is recieved by the corresponding component.
   const iWantToRegisterClick = () => {
-    setUserType((prevUserType) => {
-      setDisplayElement(<Registration userType={prevUserType} />);
-      setVisibleButtons(<RegisterBtn />);
-      return prevUserType;
-    });
+    setDisplayElement(<Registration />);
+    setVisibleButtons(null);
   };
 
   // Dialog flow button: ("Search for a student" button)
   const searchForAstudentClick = () => {
-    setDisplayElement(Search);
-    setVisibleButtons([<SearchBtn key={"SearchBtn"} onClick={searchClick} />]);
-    setUserType("student");
+    setDisplayElement(<Search />);
+    setVisibleButtons(null);
   };
   // Dialog flow button: ("Search for a teacher" button)
   const searchForAteacherClick = () => {
-    setDisplayElement(Search);
-    setVisibleButtons([<SearchBtn key={"SearchBtn"} onClick={searchClick} />]);
-    setUserType("teacher");
+    setDisplayElement(<Search />);
+    setVisibleButtons(null);
   };
 
   // Dialog flow button: ("Search" button)
@@ -160,6 +157,24 @@ export const CommonContextProvider = ({ children }) => {
     setVisibleButtons(<SearchBtn key={"SearchBtn"} onClick={searchClick} />);
   };
 
+  // Other functions --------------------------------------------------
+  const studentSearchTeacher = () => {
+    setVisibleButtons([
+      <SearchForAteacherBtn
+        key={"SearchForAteacherBtn"}
+        onClick={searchForAteacherClick}
+      />,
+    ]);
+  };
+  const teacherSearchStudent = () => {
+    setVisibleButtons([
+      <SearchForAstudentBtn
+        key={"SearchForAstudentBtn"}
+        onClick={searchForAstudentClick}
+      />,
+    ]);
+  };
+
   return (
     <CommonContext.Provider
       value={{
@@ -170,6 +185,9 @@ export const CommonContextProvider = ({ children }) => {
         featuresClick,
         dataPolicyClick,
         aboutClick,
+        studentSearchTeacher,
+        teacherSearchStudent,
+        userType,
       }}
     >
       {children}

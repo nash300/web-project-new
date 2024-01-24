@@ -22,10 +22,13 @@ export const IwantToRegisterBtn = ({ onClick }) => (
   <button onClick={onClick}>I want to register</button>
 );
 
-export const RegisterBtn = ({ onClick }) => (
-  <button onClick={onClick}>Register</button>
-);
-
+export const RegisterBtn = ({ onClick }) => {
+  return (
+    <button type="submit" onClick={onClick}>
+      Register
+    </button>
+  );
+};
 export const SearchForAstudentBtn = ({ onClick }) => (
   <button onClick={onClick}>Search for a student</button>
 );

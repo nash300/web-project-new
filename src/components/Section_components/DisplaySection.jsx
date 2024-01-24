@@ -1,15 +1,8 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { CommonContext } from "../../context_files/commonContext";
 
-const DisplaySection = ({ btnIdFromTopBar }) => {
-  const {
-    userType,
-    setUserType,
-    displayElement,
-    setDisplayElement,
-    visibleButtons,
-    setVisibleButtons,
-  } = useContext(CommonContext);
+const DisplaySection = () => {
+  const { displayElement } = useContext(CommonContext);
 
   return (
     <>

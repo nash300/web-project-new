@@ -3,13 +3,15 @@
 // In addition to the details entered by the user, the user type and datestamp are automatically included in the validation process.
 //---------------------------------------------------------------------------------------------------------------------------------
 
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import CountryList from "./../utilities/CountryList";
 import SubjectDisciplineList from "./../utilities/SubjectDisciplineList";
 import supabase from "./../utilities/SupabaseConfiguration";
+import { CommonContext } from "../context_files/commonContext";
 
-const Registration = ({ userType }) => {
-  //
+const Registration = () => {
+  const { studentSearchTeacher, teacherSearchStudent, userType } =
+    useContext(CommonContext);
   //________________________________________________________________
   // STATES : Tracking data from user inputs
 
@@ -51,6 +53,7 @@ const Registration = ({ userType }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   //-------------------------------------------------------------------------
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -81,8 +84,11 @@ const Registration = ({ userType }) => {
       if (error) {
         console.error("Error submitting data:", error.message);
       } else {
-        console.log("Data submitted successfully:", data);
+        console.log("Data submitted successfully:", registrationData);
         setIsSubmitted(true);
+        userType === "student"
+          ? studentSearchTeacher()
+          : teacherSearchStudent();
       }
     } catch (error) {
       console.error("Error submitting data:", error.message);
@@ -98,11 +104,12 @@ const Registration = ({ userType }) => {
           <h2>
             Your details are now visible to all{" "}
             {userType === "student" ? "teachers" : "students"}. Thank you for
-            registering! <h1>Good luck!</h1>
+            registering!
           </h2>
+          <h1>Good luck!</h1>
         </span>
       ) : (
-        <form onSubmit={handleFormSubmit}>
+        <form id="submit-form" onSubmit={handleFormSubmit}>
           <label htmlFor="name">
             Name of the {userType} *
             <input
@@ -235,7 +242,7 @@ const Registration = ({ userType }) => {
               value={about}
             />
           </label>
-          <button type="submit" onClick={handleFormSubmit}>
+          <button type="submit" onClick={() => handleFormSubmit}>
             Submit
           </button>
         </form>
