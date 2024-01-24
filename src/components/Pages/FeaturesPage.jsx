@@ -1,4 +1,4 @@
-const Features = (
+const FeaturesPage = (
   <div className="NavBarPage" key={"features"}>
     <h2>Current Version</h2>
     andae non delectus sectetur adipisicing elit. Aspernatur labore sequi dolor
@@ -29,4 +29,4 @@ const Features = (
   </div>
 );
 
-export default Features;
+export default FeaturesPage;

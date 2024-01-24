@@ -4,12 +4,13 @@
 //---------------------------------------------------------------------------------------------------------------------------------
 
 import React, { useContext, useState } from "react";
-import CountryList from "./../utilities/CountryList";
-import SubjectDisciplineList from "./../utilities/SubjectDisciplineList";
-import supabase from "./../utilities/SupabaseConfiguration";
-import { CommonContext } from "../context_files/commonContext";
+import CountryList from "../../utilities/CountryList";
+import SubjectDisciplineList from "../../utilities/SubjectDisciplineList";
+import supabase from "../../utilities/SupabaseConfiguration";
+import { CommonContext } from "../../context_files/commonContext";
+import MessageBox from "../MessageBox";
 
-const Registration = () => {
+const RegistrationPage = () => {
   const { studentSearchTeacher, teacherSearchStudent, userType } =
     useContext(CommonContext);
   //________________________________________________________________
@@ -94,20 +95,19 @@ const Registration = () => {
       console.error("Error submitting data:", error.message);
     }
   };
+
   //----------------------------------------------------------------------
 
   return (
     <div id="registration-form">
       {isSubmitted ? (
-        <span id="register-confirmation-msg">
-          <br />
-          <h2>
-            Your details are now visible to all{" "}
-            {userType === "student" ? "teachers" : "students"}. Thank you for
-            registering!
-          </h2>
-          <h1>Good luck!</h1>
-        </span>
+        <MessageBox
+          heading="Registration is successful!"
+          msgText={`Your details are now visible to all ${
+            userType === "student" ? "teachers" : "students"
+          }`}
+          instructions="Thank you for registering!"
+        />
       ) : (
         <form id="submit-form" onSubmit={handleFormSubmit}>
           <label htmlFor="name">
@@ -251,4 +251,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default RegistrationPage;

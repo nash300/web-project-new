@@ -1,13 +1,12 @@
-import SubjectDisciplineList from "./../utilities/SubjectDisciplineList";
-import supabase from "./../utilities/SupabaseConfiguration";
-import { CommonContext } from "../context_files/commonContext";
+import SubjectDisciplineList from "../../utilities/SubjectDisciplineList";
+import supabase from "../../utilities/SupabaseConfiguration";
+import { CommonContext } from "../../context_files/commonContext";
 import { useContext, useState } from "react";
 import SearchResultsPage from "./SearchResultsPage";
 
-const Search = () => {
+const SearchPage = () => {
   // Importing global variables and functions from the commonContext file
-  const { userType, studentSearchTeacher, teacherSearchStudent } =
-    useContext(CommonContext);
+  const { userType } = useContext(CommonContext);
 
   // States to store user choices
   const [selectedSubject, setSelectedSubject] = useState("");
@@ -57,14 +56,8 @@ const Search = () => {
         //___________________________________________________________________
         console.log("Data searched for", searchData);
         console.log("Data recieved", data);
-
-        // Update state with search results
         setSearchResults(data);
         setIsSuccessful(true);
-        // Show buttons in the "Button section" for the next step in the dialog flow.
-        userType === "student"
-          ? studentSearchTeacher()
-          : teacherSearchStudent();
       }
       // Error handling section
     } catch (error) {
@@ -129,4 +122,4 @@ const Search = () => {
     return <SearchResultsPage searchResults={searchResults} />;
   }
 };
-export default Search;
+export default SearchPage;

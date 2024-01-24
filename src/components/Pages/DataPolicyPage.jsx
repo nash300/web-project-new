@@ -1,4 +1,4 @@
-const DataPolicy = (
+const DataPolicyPage = (
   <div className="NavBarPage" key={"data-policy"}>
     <h2>Data Policy</h2>
     <h3>fugiat</h3>
@@ -200,4 +200,4 @@ const DataPolicy = (
   </div>
 );
 
-export default DataPolicy;
+export default DataPolicyPage;

@@ -1,4 +1,4 @@
-const About = (
+const AboutPage = (
   <div className="NavBarPage" key={"about"}>
     <h2>Who Are We?</h2>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ex
@@ -139,4 +139,4 @@ const About = (
   </div>
 );
 
-export default About;
+export default AboutPage;

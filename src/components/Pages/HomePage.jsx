@@ -1,6 +1,6 @@
 /*This is the home-page. The text in this page is animated using CSS*/
 
-const HomeDisplay = (
+const HomePage = (
   <div id="home" key={"home"}>
     <p>
       "The best way to learn is to teach" <br />
@@ -9,4 +9,4 @@ const HomeDisplay = (
   </div>
 );
 
-export default HomeDisplay;
+export default HomePage;

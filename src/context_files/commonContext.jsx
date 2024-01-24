@@ -7,13 +7,13 @@
 
 import React, { createContext, useState } from "react";
 // Importing pages
-import HomeDisplay from "../components/Home";
-import About from "../components/About";
-import Features from "../components/Features";
-import DataPolicy from "../components/DataPolicy";
-import Registration from "../components/Registration";
-import Search from "../components/Search";
-
+import HomePage from "../components/Pages/HomePage";
+import AboutPage from "../components/Pages/AboutPage";
+import FeaturesPage from "../components/Pages/FeaturesPage";
+import DataPolicyPage from "../components/Pages/DataPolicyPage";
+import RegistrationPage from "../components/Pages/RegistrationPage";
+import SearchPage from "../components/Pages/SearchPage";
+import ProfilePage from "../components/Pages/ProfilePage";
 // Importing the buttons (Button components)
 import {
   IwantToLearnBtn,
@@ -21,11 +21,8 @@ import {
   IwantToRegisterBtn,
   SearchForAstudentBtn,
   SearchForAteacherBtn,
-  SearchBtn,
-  NewSearchBtn,
   LetsBeginBtn,
-  RegisterBtn,
-} from "../components/Section_components/ButtonSection";
+} from "../utilities/Buttons";
 
 export const CommonContext = createContext();
 
@@ -45,7 +42,7 @@ export const CommonContextProvider = ({ children }) => {
   // This section defines the state object for managing the currently displayed component.
   // The "displayElement" object is directly rendered by the "Display section" component.
   //______________________________________________________________________________________
-  const [displayElement, setDisplayElement] = useState(HomeDisplay);
+  const [displayElement, setDisplayElement] = useState(HomePage);
 
   //*******************************************************************************************************************
   // STATE:  VISIBLE BUTTONS
@@ -60,14 +57,12 @@ export const CommonContextProvider = ({ children }) => {
       <IwantToLearnBtn key={"IwantToLearnBtn"} onClick={iWantToLearnClick} />,
       <IwantToTeachBtn key={"IwantToTeachBtn"} onClick={iWantToTeachClick} />,
     ]);
-    setDisplayElement(HomeDisplay);
+    setDisplayElement(HomePage);
     setUserType(null);
   };
-
   const [visibleButtons, setVisibleButtons] = useState(() => (
     <LetsBeginBtn key={"LetsBeginBtn"} onClick={letsBeginClick} />
   ));
-
   //_______________________________________________________________________________
   //  BUTTON ON-CLICK FUNCTIONS
   // This section defines the callback functions triggered when buttons are clicked.
@@ -79,22 +74,22 @@ export const CommonContextProvider = ({ children }) => {
       <LetsBeginBtn key={"LetsBeginBtn"} onClick={letsBeginClick} />,
     ]);
     setUserType(null);
-    setDisplayElement(HomeDisplay);
+    setDisplayElement(HomePage);
   };
   // Navigation button click: ("Features" button)
   const featuresClick = () => {
     resetToHome();
-    setDisplayElement(Features);
+    setDisplayElement(FeaturesPage);
   };
   // Navigation button click: ("Data Policy" button)
   const dataPolicyClick = () => {
     resetToHome();
-    setDisplayElement(DataPolicy);
+    setDisplayElement(DataPolicyPage);
   };
   // Navigation button click: ("About" button)
   const aboutClick = () => {
     resetToHome();
-    setDisplayElement(About);
+    setDisplayElement(AboutPage);
   };
 
   // Dialog flow button: ("I want to teach" button)
@@ -129,35 +124,23 @@ export const CommonContextProvider = ({ children }) => {
 
   // Dialog flow button: ("I want to register" button)
   const iWantToRegisterClick = () => {
-    setDisplayElement(<Registration />);
+    setDisplayElement(<RegistrationPage />);
     setVisibleButtons(null);
   };
 
   // Dialog flow button: ("Search for a student" button)
   const searchForAstudentClick = () => {
-    setDisplayElement(<Search />);
+    setDisplayElement(<SearchPage />);
     setVisibleButtons(null);
   };
   // Dialog flow button: ("Search for a teacher" button)
   const searchForAteacherClick = () => {
-    setDisplayElement(<Search />);
+    setDisplayElement(<SearchPage />);
     setVisibleButtons(null);
   };
 
-  // Dialog flow button: ("Search" button)
-  const searchClick = () => {
-    setDisplayElement(SearchResults);
-    setVisibleButtons([
-      <NewSearchBtn key={"NewSearchBtn"} onClick={newSearchClick} />,
-    ]);
-  };
-  // Dialog flow button: ("New Search" button)
-  const newSearchClick = () => {
-    setDisplayElement(Search);
-    setVisibleButtons(<SearchBtn key={"SearchBtn"} onClick={searchClick} />);
-  };
-
   // Other functions --------------------------------------------------
+  // These are the buttons that appear right after a user registers.
   const studentSearchTeacher = () => {
     setVisibleButtons([
       <SearchForAteacherBtn
@@ -175,6 +158,11 @@ export const CommonContextProvider = ({ children }) => {
     ]);
   };
 
+  // This functions renders the Profile page to the screen.
+  const setToProfilePage = () => {
+    setDisplayElement(ProfilePage);
+  };
+
   return (
     <CommonContext.Provider
       value={{
@@ -188,6 +176,9 @@ export const CommonContextProvider = ({ children }) => {
         studentSearchTeacher,
         teacherSearchStudent,
         userType,
+        setToProfilePage,
+        setDisplayElement,
+        setVisibleButtons,
       }}
     >
       {children}

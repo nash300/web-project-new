@@ -173,21 +173,26 @@ ________________________________________________________________________________
 }
 
 /* 
-==================================================================
-This span is dynamically rendered after a successful registration.
-__________________________________________________________________
+=======================================================================================
+This element is used to display messages to the user. (eg. Registration is successful!)
+_______________________________________________________________________________________
  */
-#register-confirmation-msg {
+.msg-to-user {
   display: flex;
   flex-direction: column;
   margin: auto;
+  width: 50%;
   text-align: center;
   padding: 20px;
-  background: rgba(146, 139, 139, 0.452);
-
+  font-weight: bold;
   box-shadow: 0 0 10px rgb(20, 20, 20);
+  background: linear-gradient(
+    to right,
+    rgba(32, 241, 4, 0.452),
+    rgba(74, 141, 65, 0.151)
+  );
 }
-#register-confirmation-msg * {
+.msg-to-user * {
   background: none;
   color: rgb(32, 41, 36);
   text-align: center;

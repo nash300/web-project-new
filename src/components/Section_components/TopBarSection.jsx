@@ -5,9 +5,9 @@
 //-------------------------------------------------------------------------
 
 import React, { useContext } from "react";
-import { CommonContext } from "../context_files/commonContext";
+import { CommonContext } from "../../context_files/commonContext";
 
-const TopBar = () => {
+const TopBarSection = () => {
   // -Importing the onClick functions from the commonContext file
   const { resetToHome, featuresClick, dataPolicyClick, aboutClick } =
     useContext(CommonContext);
@@ -54,4 +54,4 @@ const TopBar = () => {
   );
 };
 
-export default TopBar;
+export default TopBarSection;
