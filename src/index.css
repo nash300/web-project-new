@@ -9,7 +9,12 @@
 /******************************************************************************************************************************/
 h1,
 h2 {
-  background: #0000007c;
+  background: linear-gradient(
+    to right,
+
+    rgb(35, 211, 12),
+    rgba(32, 241, 4, 0)
+  );
   color: white;
   padding-left: 35px;
 }
@@ -21,6 +26,29 @@ h3 {
 li {
   text-transform: capitalize;
   list-style-type: none;
+}
+
+.button {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  border-radius: 10px;
+  font-variant: small-caps;
+  background: #0c0c0c;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 0 10px rgb(20, 20, 20);
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(77, 80, 77, 0.5);
+  background: rgba(48, 185, 14, 0.5);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 
 /***************************************************
@@ -162,10 +190,8 @@ body {
   align-items: center; /* vertical */
   justify-content: center; /* horizontal */
   white-space: nowrap;
-  font-variant: small-caps;
   background: #000000;
-  border: 1px solid rgb(83, 83, 83);
-  pointer-events: auto;
+  border: 1px solid rgba(83, 83, 83, 0.993);
 }
 
 .NavSection a {
@@ -174,17 +200,13 @@ body {
   color: rgb(255, 255, 255);
   justify-content: center;
   align-items: center; /* vertical */
+  width: 100%;
+  height: 100%;
 }
 
 .NavSection li:hover {
   background: rgba(32, 241, 4, 0.5);
   box-shadow: 0 0 15px #bdc019;
-  cursor: pointer;
-}
-
-.NavSection a:hover {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
 }
 
 #main-container {
@@ -213,28 +235,6 @@ body {
   display: grid;
   width: 80%;
   height: auto;
-}
-
-button {
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 50px;
-  border-radius: 10px;
-  font-variant: small-caps;
-  background: #0c0c0c;
-  color: rgb(255, 255, 255);
-  font-size: 1rem;
-  overflow: hidden;
-  border: none;
-  box-shadow: 0 0 10px rgb(20, 20, 20);
-}
-
-button:hover {
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(32, 241, 4, 0.5);
-  color: rgb(255, 255, 255);
-  font-weight: bold;
 }
 
 /***************************************************************************************************************************/

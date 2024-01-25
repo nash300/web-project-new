@@ -6,7 +6,7 @@ This CSS file holds styles  for the elements that renders in the "Display Sectio
 
 /* 
 ===========================================
-Home.jsx
+HomePage.jsx
 (Home page + Quote text animation)
 ___________________________________________
 */
@@ -51,7 +51,7 @@ ________________________________________________________________________________
 
 /* 
 ===========================================
-Search.jsx  &  Registration.jsx
+SearchPage.jsx  &  RegistrationPage.jsx
 (Contains forms for search/registration)
 ___________________________________________
 */
@@ -67,7 +67,7 @@ ___________________________________________
 
 /* 
 ===========================================
-Profile.jsx
+ProfilePage.jsx
 (Contains user's profile information)
 ___________________________________________
 */
@@ -100,7 +100,7 @@ ___________________________________________
 
 /* 
 ====================================================================================
-ResultElement.jsx
+SearchPage.jsx
 This custom component is used to wrap brief user details in the search results page. 
 ____________________________________________________________________________________
 */
@@ -160,23 +160,6 @@ ________________________________________________________________________________
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.btn-section button {
-  width: 70%;
-  height: auto;
-  border-radius: 3px;
-  background: #0c0c0c;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  box-shadow: none;
-}
-
-.btn-section button:hover {
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  height: 50%;
 }
 
 /* 

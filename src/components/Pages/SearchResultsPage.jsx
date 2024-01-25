@@ -44,7 +44,7 @@ const SearchResultsPage = ({ searchResults }) => {
               </span>
             </div>
             <div className="btn-section">
-              <button onClick={() => handleOnClick(user.id)}>
+              <button className="button" onClick={() => handleOnClick(user.id)}>
                 View Profile
               </button>
             </div>

@@ -242,7 +242,11 @@ const RegistrationPage = () => {
               value={about}
             />
           </label>
-          <button type="submit" onClick={() => handleFormSubmit}>
+          <button
+            type="submit"
+            className="button"
+            onClick={() => handleFormSubmit}
+          >
             Submit
           </button>
         </form>
