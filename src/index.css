@@ -209,6 +209,20 @@ body {
   box-shadow: 0 0 15px #bdc019;
 }
 
+/* =======================================================================================================================
+This class is assigned ONLY used for the pages that are directly displayed when the user clicks on navigation-bar buttons.
+These pages are static. Therefore, this applies for ALL of them.
+__________________________________________________________________________________________________________________________
+*/
+.NavBarPage {
+  height: 100%;
+  overflow: auto;
+  padding: 15px;
+  background: white;
+}
+
+/* MAIN CONTAINER */
+
 #main-container {
   display: flex;
   max-width: 100%;

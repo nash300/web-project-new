@@ -37,18 +37,6 @@ ___________________________________________
   }
 }
 
-/* =======================================================================================================================
-This class is assigned ONLY used for the pages that are directly displayed when the user clicks on navigation-bar buttons.
-These pages are static. Therefore, this applies for ALL of them.
-__________________________________________________________________________________________________________________________
-*/
-.NavBarPage {
-  height: 100%;
-  overflow: auto;
-  padding: 15px;
-  background: white;
-}
-
 /* 
 ===========================================
 SearchPage.jsx  &  RegistrationPage.jsx
@@ -145,7 +133,7 @@ ________________________________________________________________________________
   overflow: hidden;
   line-height: 1;
   margin: 10px 0px 10px 0px;
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Signika", sans-serif;
 }
 
 .created-date {

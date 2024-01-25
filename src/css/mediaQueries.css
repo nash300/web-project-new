@@ -1,61 +1,98 @@
 /* Media query for Mobile devices (landscape and portrait) */
 @media only screen and (max-width: 767px) {
-  #pageWrapper {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-  }
-  .TopBar {
-    display: flex;
-    height: 12%; /* the rest of the height is assigned to main-container*/
-    max-width: 100%;
-    overflow: hidden;
-  }
-  #logo-section {
-    display: flex;
-    height: 60px;
-    width: 100%;
-  }
-
-  .NavSection {
-    height: 100%;
-    width: 100%;
-  }
-  #navigation-bar {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  #navigation-bar ul {
-    display: flex;
-  }
-  .NavSection li {
-    border: 1px solid rgba(83, 83, 83, 0.267);
-    height: auto;
-  }
-
   #main-container {
     display: flex;
     flex-direction: column-reverse;
-    height: 88%; /* Other 25% is assigned to Top-bar*/
-    width: 100%;
-    overflow: visible;
   }
 
+  /* BUTTON AREA -----------------------*/
   #button-section {
     display: flex;
-    border: 1px solid rgb(29, 6, 235);
-    height: 100px;
-    flex: none;
-    overflow: hidden;
+    flex: 0;
+    background: none;
+    background: rgb(0, 0, 0);
   }
 
-  #display-section {
-    display: flex;
+  #button-container {
+    display: grid;
+  }
 
+  .button {
+    border-radius: 2px;
+    background: #64ca4a;
+  }
+
+  #home {
     width: 100%;
-    height: auto;
+    font-size: 5.5vw;
+  }
+  #home i {
+    font-size: 3.5vw;
+  }
+
+  /* FORM ELEMENTS */
+  form {
+    font-weight: normal;
+    width: 90%;
+  }
+  #search-result-page {
+    padding: 5px;
+  }
+  .result-element {
+    display: grid;
+    column-gap: 2px;
     align-items: center;
-    border: 1px solid rgb(235, 201, 6);
+    height: 150px;
+    box-shadow: 0 0 2px rgb(20, 20, 20);
+    padding: 1px;
+    margin-bottom: 10px;
+    border-radius: 0px 20px 20px 20px;
+    overflow: hidden;
+  }
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    height: 115px;
+  }
+  .title {
+    font-size: 0.8em;
+    padding: 5px;
+    height: 15px;
+    background: rgba(8, 8, 8, 0.164);
+    border-radius: 0px;
+    font-weight: bold;
+  }
+  .description {
+    height: 90px;
+    margin: 0;
+    padding: 10px 5px 10px 10px;
+    font-family: "Signika", sans-serif;
+    font-weight: lighter;
+    font-size: 3.5vw;
+  }
+  .created-date {
+    font-size: 2.5vw;
+    width: 100%;
+    margin: auto;
+    color: rgba(0, 0, 0, 0.637);
+    background: rgba(153, 190, 16, 0.199);
+    border-top: 1px solid rgba(0, 0, 0, 0.041);
+  }
+
+  .btn-section {
+    display: flex;
+    height: 35px;
+  }
+  .btn-section .button {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 2px rgb(20, 20, 20);
+  }
+
+  .NavBarPage {
+    margin-top: 15%;
   }
 }
 
