@@ -11,6 +11,7 @@ h1,
 h2 {
   background: #0000007c;
   color: white;
+  padding-left: 35px;
 }
 
 h3 {
@@ -82,7 +83,7 @@ body {
   display: flex;
   margin: 0px;
   padding: 0px;
-  font-variant: small-caps;
+  font-family: "Signika", sans-serif;
 }
 
 /* Settings for the Home screen background video */
@@ -176,7 +177,7 @@ body {
 }
 
 .NavSection li:hover {
-  background: #a3c11c9d;
+  background: rgba(32, 241, 4, 0.5);
   box-shadow: 0 0 15px #bdc019;
   cursor: pointer;
 }
@@ -231,7 +232,7 @@ button {
 
 button:hover {
   cursor: pointer;
-  box-shadow: 0 0 15px #bdc019;
+  box-shadow: 0 0 15px rgba(32, 241, 4, 0.5);
   color: rgb(255, 255, 255);
   font-weight: bold;
 }

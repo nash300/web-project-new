@@ -6,7 +6,8 @@ import SearchResultsPage from "./SearchResultsPage";
 
 const SearchPage = () => {
   // Importing global variables and functions from the commonContext file
-  const { userType } = useContext(CommonContext);
+  const { userType, NewSearchBtn, setVisibleButtons, setDisplayElement } =
+    useContext(CommonContext);
 
   // States to store user choices
   const [selectedSubject, setSelectedSubject] = useState("");
@@ -22,6 +23,12 @@ const SearchPage = () => {
   };
   const handleDisciplineChange = (e) => {
     setSelectedDiscipline(e.target.value);
+  };
+
+  const handleNewSearchClick = () => {
+    setIsSuccessful(false);
+    setVisibleButtons(null);
+    setDisplayElement(<SearchPage />);
   };
 
   // Main handle function for submission
@@ -58,6 +65,8 @@ const SearchPage = () => {
         console.log("Data recieved", data);
         setSearchResults(data);
         setIsSuccessful(true);
+        // Appears "New Search button with reset functionality"
+        setVisibleButtons(<NewSearchBtn onClick={handleNewSearchClick} />);
       }
       // Error handling section
     } catch (error) {

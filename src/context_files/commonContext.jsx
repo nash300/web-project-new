@@ -13,7 +13,6 @@ import FeaturesPage from "../components/Pages/FeaturesPage";
 import DataPolicyPage from "../components/Pages/DataPolicyPage";
 import RegistrationPage from "../components/Pages/RegistrationPage";
 import SearchPage from "../components/Pages/SearchPage";
-import ProfilePage from "../components/Pages/ProfilePage";
 // Importing the buttons (Button components)
 import {
   IwantToLearnBtn,
@@ -22,6 +21,7 @@ import {
   SearchForAstudentBtn,
   SearchForAteacherBtn,
   LetsBeginBtn,
+  NewSearchBtn,
 } from "../utilities/Buttons";
 
 export const CommonContext = createContext();
@@ -101,7 +101,7 @@ export const CommonContextProvider = ({ children }) => {
       />,
       <SearchForAstudentBtn
         key={"SearchForAstudentBtn"}
-        onClick={searchForAstudentClick}
+        onClick={searchForA_Click}
       />,
     ]);
     setUserType("teacher");
@@ -116,7 +116,7 @@ export const CommonContextProvider = ({ children }) => {
       />,
       <SearchForAteacherBtn
         key={"SearchForAteacherBtn"}
-        onClick={searchForAteacherClick}
+        onClick={searchForA_Click}
       />,
     ]);
     setUserType("student");
@@ -128,24 +128,19 @@ export const CommonContextProvider = ({ children }) => {
     setVisibleButtons(null);
   };
 
-  // Dialog flow button: ("Search for a student" button)
-  const searchForAstudentClick = () => {
-    setDisplayElement(<SearchPage />);
-    setVisibleButtons(null);
-  };
-  // Dialog flow button: ("Search for a teacher" button)
-  const searchForAteacherClick = () => {
+  // Dialog flow button: (The same function is used for both "Students" and "Teachers" when serching.)
+  const searchForA_Click = () => {
     setDisplayElement(<SearchPage />);
     setVisibleButtons(null);
   };
 
-  // Other functions --------------------------------------------------
-  // These are the buttons that appear right after a user registers.
+  // Other functions ----------------------------------------------
+  // These are the buttons that appear right after a user registers guiding them to search for a student/teacher.
   const studentSearchTeacher = () => {
     setVisibleButtons([
       <SearchForAteacherBtn
         key={"SearchForAteacherBtn"}
-        onClick={searchForAteacherClick}
+        onClick={searchForA_Click}
       />,
     ]);
   };
@@ -153,14 +148,9 @@ export const CommonContextProvider = ({ children }) => {
     setVisibleButtons([
       <SearchForAstudentBtn
         key={"SearchForAstudentBtn"}
-        onClick={searchForAstudentClick}
+        onClick={searchForA_Click}
       />,
     ]);
-  };
-
-  // This functions renders the Profile page to the screen.
-  const setToProfilePage = () => {
-    setDisplayElement(ProfilePage);
   };
 
   return (
@@ -176,9 +166,10 @@ export const CommonContextProvider = ({ children }) => {
         studentSearchTeacher,
         teacherSearchStudent,
         userType,
-        setToProfilePage,
         setDisplayElement,
         setVisibleButtons,
+        //-----------------------
+        NewSearchBtn,
       }}
     >
       {children}
