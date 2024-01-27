@@ -1,8 +1,30 @@
 /* Media query for Mobile devices (landscape and portrait) */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 480px) {
+  .TopBar {
+    position: fixed;
+    width: 100vw;
+    flex-direction: column;
+    height: 75px;
+    opacity: 0.8;
+    align-items: center;
+  }
+
   #main-container {
-    display: flex;
     flex-direction: column-reverse;
+    overflow: hidden;
+    position: absolute;
+    width: 100vw;
+    top: 75px;
+    height: calc(100vh - 75px);
+  }
+
+  /* DISPLAY AREA ----------------------*/
+  #display-section {
+    display: flex;
+    flex-direction: column;
+    flex: 2; /* takes 2/3 of the total display width*/
+    height: 100%;
+    width: 100%;
   }
 
   /* BUTTON AREA -----------------------*/
@@ -10,7 +32,7 @@
     display: flex;
     flex: 0;
     background: none;
-    background: rgb(0, 0, 0);
+    height: auto;
   }
 
   #button-container {
@@ -25,6 +47,7 @@
   #home {
     width: 100%;
     font-size: 5.5vw;
+    overflow: hidden;
   }
   #home i {
     font-size: 3.5vw;
@@ -94,14 +117,4 @@
   .NavBarPage {
     margin-top: 15%;
   }
-}
-
-/* Media query for Tablet devices (landscape and portrait) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Styles for Tablet */
-}
-
-/* Media query for PC devices */
-@media only screen and (min-width: 1025px) {
-  /* Styles for PC */
 }

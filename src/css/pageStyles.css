@@ -47,7 +47,7 @@ ___________________________________________
 #registration-form {
   display: flex;
   height: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.808);
   justify-content: center;
   align-content: center;
   overflow: scroll;
