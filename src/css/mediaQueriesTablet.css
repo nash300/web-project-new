@@ -1,2 +1,10 @@
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  .NavBarPage {
+    padding: 0px 8%;
+  }
+
+  form {
+    font-weight: normal;
+    width: 70%;
+  }
 }

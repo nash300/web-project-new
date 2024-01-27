@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import "./css/pageStyles.css";
 import "./css/mediaQueriesMobile.css";
+import "./css/mediaQueriesTablet.css";
 import bgVideo from "./images/bgv.mp4";
 
 import TopBarSection from "./components/Section_components/TopBarSection";
