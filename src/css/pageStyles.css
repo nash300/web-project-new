@@ -64,7 +64,7 @@ _____________________________________________________
   background: rgba(255, 255, 255, 0.808);
   justify-content: center;
   align-content: center;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #search-form button,

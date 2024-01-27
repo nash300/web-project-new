@@ -77,7 +77,7 @@ form option {
 form textarea {
   display: flex;
   height: 150px;
-  resize: vertical;
+  resize: none;
   border: 1px solid #ccc;
   box-shadow: 0 0 5px rgb(187, 187, 187);
 }
