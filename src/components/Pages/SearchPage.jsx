@@ -120,7 +120,7 @@ const SearchPage = () => {
             </select>
           </label>
 
-          <button type="submit" className="button" onClick={handleFormSubmit}>
+          <button type="submit" onClick={handleFormSubmit}>
             Search
           </button>
         </form>
