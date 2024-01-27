@@ -8,31 +8,37 @@ const ProfilePage = ({ userObject }) => {
 
   return (
     <div id="user-profile">
-      <div>
-        <h4 id="name">{userObject.name}</h4>
-      </div>
-
-      <div>
-        <h4>From</h4>
-        <p>{userObject.country}</p>
-      </div>
-
-      <div>
-        <h4>{userDoes}</h4>
-        <p>{userObject.discipline}</p>
-      </div>
-
-      <div id="contact-info">
-        <h4>Contact Info</h4>
+      <span id="name-section">
         <div>
-          <h5>Platform</h5>
+          <h4 id="name">{userObject.name}</h4>
+        </div>
+      </span>
+
+      <span id="info-side">
+        <div>
+          <h4>From:</h4>
+          <p>{userObject.country}</p>
+        </div>
+
+        <div>
+          <h4>{userDoes}:</h4>
+          <p>{userObject.discipline}</p>
+        </div>
+
+        <div>
+          <h4>Platform:</h4>
           <p>{userObject.platform}</p>
         </div>
 
         <div>
-          <h5>User ID: </h5>
+          <h4>User ID:</h4>
           <p>{userObject.user_id}</p>
         </div>
+      </span>
+
+      <div id="about-side">
+        <h4>About me:</h4>
+        <p>{userObject.about}</p>
       </div>
     </div>
   );

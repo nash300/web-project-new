@@ -1,14 +1,15 @@
 /*
-===================================================================================
-This CSS file holds styles  for the elements that renders in the "Display Section".
-===================================================================================
+===================================================================================================
+This CSS file holds styles for individual pages and elements that renders in the "Display Section".
+
+===================================================================================================
 */
 
 /* 
-===========================================
+==================================================
 HomePage.jsx
 (Home page + Quote text animation)
-___________________________________________
+__________________________________________________
 */
 #home {
   display: flex;
@@ -37,11 +38,24 @@ ___________________________________________
   }
 }
 
+/* =======================================================================================================================
+This class is assigned ONLY used for the pages that are directly displayed when the user clicks on navigation-bar buttons.
+These pages are static. Therefore, these settings apply for ALL of them.
+__________________________________________________________________________________________________________________________
+*/
+.NavBarPage {
+  height: 100%;
+  overflow: auto;
+  padding: 0px 20%;
+  background: white;
+  text-align: justify;
+}
+
 /* 
-===========================================
+=====================================================
 SearchPage.jsx  &  RegistrationPage.jsx
-(Contains forms for search/registration)
-___________________________________________
+(forms for search/registration)
+_____________________________________________________
 */
 #search-form,
 #registration-form {
@@ -50,40 +64,13 @@ ___________________________________________
   background: rgba(255, 255, 255, 0.808);
   justify-content: center;
   align-content: center;
-  overflow: scroll;
+  overflow: hidden;
 }
 
-/* 
-===========================================
-ProfilePage.jsx
-(Contains user's profile information)
-___________________________________________
-*/
-#user-profile {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-#user-profile div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-#user-profile div p {
-  margin: 0px;
-}
-#user-profile h4 {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-#user-profile #name {
-  font-size: 40px;
+/*Overriding the settings from Index.css*/
+#search-form button,
+#registration-form button {
+  margin: 20px 0px;
 }
 
 /* 
@@ -98,18 +85,18 @@ ________________________________________________________________________________
   background-color: rgb(255, 255, 255);
   height: 100%;
   margin: 0;
-  padding: 5%;
   overflow: scroll;
   max-width: 100%;
+  padding: 0;
 }
 
 .result-element {
   display: flex;
-  background-color: rgba(147, 190, 48, 0.37);
+  background-color: rgba(48, 253, 7, 0.137);
   height: 120px;
-  box-shadow: 0 0 10px rgb(20, 20, 20);
+  box-shadow: 0 0 5px rgb(20, 20, 20);
   padding: 10px 20px 10px 20px;
-  margin-bottom: 20px;
+  margin: 15px 5vw;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }
@@ -124,9 +111,10 @@ ________________________________________________________________________________
 .title {
   align-items: center;
   height: 20px;
-  background: rgba(8, 8, 8, 0.164);
+  background: rgb(132, 245, 3);
   border-bottom-right-radius: 10px;
   font-weight: bold;
+  padding-left: 10px;
 }
 .description {
   height: 80px;
@@ -150,6 +138,51 @@ ________________________________________________________________________________
   justify-content: center;
 }
 
+.btn-section button {
+  width: auto;
+  height: 30px;
+  border-radius: 5px;
+  background: rgb(5, 5, 5);
+  color: rgb(255, 255, 255);
+
+  box-shadow: 0 0 1px rgb(20, 20, 20);
+}
+
+/* 
+=====================================================
+ProfilePage.jsx
+(Contains user's profile information)
+_____________________________________________________
+*/
+#user-profile {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background: rgb(255, 255, 255);
+  height: 100%;
+  overflow: auto;
+}
+
+#user-profile #name-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  height: 10%;
+  width: 100%;
+  background: rgb(0, 245, 0);
+}
+
+#user-profile #info-side {
+  display: flex;
+  justify-content: space-evenly;
+}
+#user-profile #about-side {
+  text-align: justify;
+  padding: 0px 25px;
+}
+
 /* 
 =======================================================================================
 This element is used to display messages to the user. (eg. Registration is successful!)
@@ -160,15 +193,10 @@ ________________________________________________________________________________
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  width: 50%;
   font-weight: bold;
   box-shadow: 0 0 20px rgba(20, 20, 20, 0.637);
-  background: linear-gradient(
-    to right,
-    rgba(32, 241, 4, 0.5),
-    rgb(27, 121, 15)
-  );
-  border-radius: 0px 50px 50px 50px;
+  border-radius: 50px;
+  padding: 0px 15px;
 }
 
 .mb-heading {

@@ -29,14 +29,13 @@ li {
 }
 
 .button {
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 30vw;
+  margin: 10px 30px;
   height: 50px;
   border-radius: 10px;
   font-variant: small-caps;
-  background: #0c0c0c;
-  color: rgb(255, 255, 255);
+  background: #33f103be;
+  color: rgb(5, 5, 5);
   font-size: 1rem;
   overflow: hidden;
   border: none;
@@ -46,8 +45,8 @@ li {
 
 .button:hover {
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(77, 80, 77, 0.5);
-  background: rgba(48, 185, 14, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  background: rgb(45, 209, 4);
   color: rgb(255, 255, 255);
   font-weight: bold;
 }
@@ -207,64 +206,53 @@ video {
   box-shadow: 0 0 15px #bdc019;
 }
 
-/* =======================================================================================================================
-This class is assigned ONLY used for the pages that are directly displayed when the user clicks on navigation-bar buttons.
-These pages are static. Therefore, this applies for ALL of them.
-__________________________________________________________________________________________________________________________
-*/
-.NavBarPage {
-  height: 100%;
-  overflow: auto;
-  padding: 15px;
-  background: white;
-}
-
+/****************************************************************************/
 /* MAIN CONTAINER */
-
+/****************************************************************************/
 #main-container {
   display: flex;
-  max-width: 100%;
-  height: 100%;
-}
-
-/*********************************************************************************************************************************************/
-/*    BUTTON SECTION 
-/*********************************************************************************************************************************************/
-/* The buttons are displayed in this section. 
-/* This section uses 1/3 of the total display width.
-/*-------------------------------------------------------------------------------------------------------------------------------------------*/
-#button-section {
-  display: flex;
-  flex: 1; /* takes 1/3 of the total display width*/
-  background: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/***************************************************************************/
+/*    BUTTON SECTION 
+/***************************************************************************/
+/* The buttons are displayed in this section. 
+/* This section uses 1/3 of the total display width.
+/*-------------------------------------------------------------------------*/
+#button-section {
+  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
 }
 
 /* This element is provided by the <ButtonSection/> component*/
 #button-container {
-  display: grid;
-  width: 80%;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/***************************************************************************************************************************/
+/**************************************************************************/
 /*   DISPLAY SECTION 
-/***************************************************************************************************************************/
+/**************************************************************************/
 /* This section is used to display the outputs/results 
 /* This section uses 2/3 of the total display width*/
-/*-------------------------------------------------------------------------------------------------------------------------*/
-
+/*------------------------------------------------------------------------*/
 #display-section {
   display: flex;
   flex-direction: column;
-  flex: 2; /* takes 2/3 of the total display width*/
-  max-height: 100%;
-  max-width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 /* this element is delivered by the <DisplaySection/> component*/
 #display-container {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
 }
