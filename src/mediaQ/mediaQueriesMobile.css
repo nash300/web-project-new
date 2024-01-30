@@ -1,7 +1,8 @@
-/* Media query for Mobile devices (landscape and portrait) */
+/* Media query for Mobile devices (devive with <= 480px) */
 @media only screen and (max-width: 480px) {
+  /*
+  */
   /* *******   PAGE LAYOUT SETTINGS   ****** */
-
   .TopBar {
     height: 10%;
   }
@@ -13,12 +14,17 @@
     justify-content: space-evenly;
   }
 
-  /* DISPLAY AREA */
+  /* ------ DISPLAY SECTION ELEMENTS--------*/
   #display-section {
     overflow: auto;
   }
 
-  /* BUTTON AREA */
+  #display-container {
+    height: 100%;
+    overflow: auto;
+  }
+
+  /* ------- BUTTON SECTION ELEMENTS  ------ */
   #button-section {
     background: rgba(0, 0, 0, 0.404);
     width: 100%;
@@ -35,13 +41,22 @@
     background: #64ca4a;
   }
 
-  /* FORM ELEMENTS */
+  /* ----- FORM ELEMENTS ------ */
   form {
     font-weight: normal;
     width: 90%;
   }
 
   /* ****************   STYLINGS FOR INDIVIDUAL PAGES   **********************/
+
+  /* RegistrationPage.jsx*/
+  #registration-form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background: rgba(255, 255, 255, 0.808);
+    padding: 20px 2px;
+  }
 
   /*HomePage.jsx*/
   #home {
@@ -55,53 +70,58 @@
 
   /* SearchResultPage.jsx*/
   #search-result-page {
-    padding: 2% 1%;
+    padding: 0;
+    width: 100vw;
     font-size: 0.8em;
+    overflow: auto;
   }
   .result-element {
-    height: 100px;
-    box-shadow: 0 0 2px rgb(20, 20, 20);
-    padding: 0px;
-    border-radius: 0px;
-    margin: 4px 0px;
+    flex-direction: column;
+    border: 1px;
+    padding: 0;
+    margin: 15px 5px 5px 5px;
+    height: 150px;
+    border-radius: 10px;
   }
   .info-section {
-    width: 80%;
-    flex: 3;
-    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .title {
-    flex: 1;
-    font-size: 1em;
+    display: flex;
+    height: 40px;
+    border-radius: 0px;
+    align-items: center;
   }
   .description {
-    flex: 4;
-    padding: 2px 10px;
-    margin: 0;
-    font-size: 11px;
+    align-items: center;
     text-align: justify;
+    padding: 0px 7px 1px 7px;
   }
   .created-date {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    flex: 1;
-    font-size: 8px;
+    height: 20px;
+    font-size: 0.8em;
+    padding-right: 5px;
   }
 
   .btn-section {
-    width: 20%;
+    height: 20px;
   }
   .btn-section button {
-    border-radius: 3px;
+    border-radius: 0px;
     margin: 0;
     font-size: 10px;
-    height: 3vh;
-    right: 0;
+    height: 100%;
+    width: 100%;
   }
 
   .NavBarPage {
-    padding: 10% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 5%;
   }
 }

@@ -1,3 +1,7 @@
+/* -This component is used to display the search results*/
+/* -It recieves the results as an array object */
+/* -Creates dynamic messages using <MessageBox/> which displays the status of the results (ex: "No users found") */
+
 import { useContext } from "react";
 import { CommonContext } from "../../context_files/commonContext";
 import ProfilePage from "./ProfilePage";

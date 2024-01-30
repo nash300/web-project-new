@@ -4,9 +4,9 @@
 ******************************************************************************************************/
 /*
 /*
-/******************************************************************************************************************************/
+/********************************************************/
 /*    GENERELL ELEMENTS                                                                                                      
-/******************************************************************************************************************************/
+/********************************************************/
 * {
   box-sizing: border-box;
 }
@@ -33,7 +33,7 @@ li {
 }
 
 /***************************************************
-/*  FORMS
+/*  ELEMENTS IN FORMS 
 /***************************************************
 /* These settings apply for all forms in this site*/
 form {
@@ -82,7 +82,10 @@ form textarea {
   box-shadow: 0 0 5px rgb(187, 187, 187);
 }
 
-/*-----------------------------------------------------------*/
+/***************************************************
+/*  BODY & ROOT 
+/**************************************************/
+/* Using the maximum width of the screen*/
 body {
   margin: 0px;
   padding: 0px;
@@ -105,11 +108,11 @@ body {
   font-family: "Signika", sans-serif;
 }
 
-/* Settings for the Home screen background video */
-/* This is a copyright free video. Downloaded from "Pixabay"
-/* https://pixabay.com/videos/woman-model-notebook-book-creator-130645/
-*/
-
+/* *********************************  Background Video *******************************************/
+/* Basic setting (ex: autoplay, loop) are directly defined as HTML attributes in <App/> compoennt*/
+/* Settings for the Home screen background video                                                 */
+/* This is a copyright free video. Downloaded from "Pixabay"                                     */
+/* https://pixabay.com/videos/woman-model-notebook-book-creator-130645/                          */
 video {
   position: absolute;
   top: 0;
@@ -121,11 +124,11 @@ video {
   filter: brightness(50%) blur(5px);
 }
 
-/*********************************************************************************************************************************************/
+/***************************************************************************************************/
 /*    TOPBAR SECTION 
-/*********************************************************************************************************************************************/
+/***************************************************************************************************/
 /* This is the top section of the web-site which includes the logo and the navigation menu buttons 
-/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
 .TopBar {
   flex-direction: column;
   height: 15%;
@@ -165,7 +168,7 @@ video {
 
 .NavSection li {
   display: flex;
-  flex: 1; /* equal width */
+  flex: 1; /* equal width for all menu list items*/
   align-items: center; /* vertical */
   justify-content: center; /* horizontal */
   white-space: nowrap;

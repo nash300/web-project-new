@@ -1,3 +1,5 @@
+/* Media query for Tablet devices (  481px <= devive with <= 760px) */
+
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .NavBarPage {
     padding: 0px 8%;

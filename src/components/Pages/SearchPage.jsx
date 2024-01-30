@@ -4,6 +4,9 @@ import { CommonContext } from "../../context_files/commonContext";
 import { useContext, useState } from "react";
 import SearchResultsPage from "./SearchResultsPage";
 
+/* This is the search page. The options in the drop-down menus are pre-defined as objects/arrays. */
+/* Drop down menus are dynamicly created in the run-time */
+
 const SearchPage = () => {
   // Importing global variables and functions from the commonContext file
   const { userType, NewSearchBtn, setVisibleButtons, setDisplayElement } =
@@ -24,7 +27,7 @@ const SearchPage = () => {
   const handleDisciplineChange = (e) => {
     setSelectedDiscipline(e.target.value);
   };
-
+  // "New search" button click functions. Resets the page components into "Search" stage.
   const handleNewSearchClick = () => {
     setIsSuccessful(false);
     setVisibleButtons(null);
@@ -40,7 +43,7 @@ const SearchPage = () => {
     const searchData = {
       subject: selectedSubject,
       discipline: selectedDiscipline,
-      // Assuming the user always search for a opposite user type, the userType searching for is automatically converted to the opposite.
+      // This function changes the user type into the opposite *(Assuming users always search for the opposite type)
       user_type: userType === "student" ? "teacher" : "student",
     };
 
@@ -48,7 +51,7 @@ const SearchPage = () => {
     // COPIED CODE SNIPPET: handling data transaction to the API
     //--------------------------------------------------------------------
     try {
-      // Insert the registration data into the Supabase table
+      // Inserting the registration data into the Supabase table
       const { data, error } = await supabase
         .from("users") // My table name in supabase.
         .select() // selecting all records
@@ -60,12 +63,11 @@ const SearchPage = () => {
         console.error("Error submitting data:", error.message);
       } else {
         // This section executes only if the data transaction is sucsessfull.
-        //___________________________________________________________________
         console.log("Data searched for", searchData);
         console.log("Data recieved", data);
         setSearchResults(data);
         setIsSuccessful(true);
-        // Appears "New Search button with reset functionality"
+        // Showing "New Search" button with reset functionality"
         setVisibleButtons(<NewSearchBtn onClick={handleNewSearchClick} />);
       }
       // Error handling section
@@ -75,7 +77,7 @@ const SearchPage = () => {
   };
 
   // RETURN SECTION
-  //_________________________________________________________________________________________________________________
+  //________________________________________________________________________________________________
   if (isSuccessful === false) {
     return (
       <div id="search-form">
@@ -90,7 +92,7 @@ const SearchPage = () => {
               required
             >
               <option value=""> --- Select a subject --- </option>
-              {/* Generating subject list options */}
+              {/* Generating subject list menu */}
               {SubjectDisciplineList.map((subject) => (
                 <option key={subject.id} value={subject.name}>
                   {subject.name}
