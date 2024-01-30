@@ -57,11 +57,17 @@ _____________________________________________________
 #search-form,
 #registration-form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
   height: 100%;
   background: rgba(255, 255, 255, 0.808);
-  justify-content: center;
-  align-content: center;
   overflow: auto;
+  padding: 20px 2px;
+}
+
+#search-form {
+  justify-content: center;
 }
 
 #search-form button,
