@@ -1,11 +1,16 @@
+/* 
+==============================================================================================
+This is the search page. The options in the drop-down menus are pre-defined as objects/arrays. 
+Drop down menus are dynamicly created at the run-time.
+The results are displayed using <SearchResultsPage/> components.
+==============================================================================================
+*/
+
 import SubjectDisciplineList from "../../utilities/SubjectDisciplineList";
 import supabase from "../../utilities/SupabaseConfiguration";
 import { CommonContext } from "../../context_files/commonContext";
 import { useContext, useState } from "react";
 import SearchResultsPage from "./SearchResultsPage";
-
-/* This is the search page. The options in the drop-down menus are pre-defined as objects/arrays. */
-/* Drop down menus are dynamicly created in the run-time */
 
 const SearchPage = () => {
   // Importing global variables and functions from the commonContext file

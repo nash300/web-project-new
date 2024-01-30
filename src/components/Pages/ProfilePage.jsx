@@ -1,11 +1,19 @@
+/*
+=================================================================================
+- This file renders the Prifile page of the user.
+- This component accepts an object (the selected user in the search result list)-
+- Breacks downs it's properties and displays in the corresponding sections.
+=================================================================================
+*/
+
 import React from "react";
 
-// This component accepts an object (the selected user in the search result list)-
-// Breacks downs it's properties and displays in the corresponding sections.
 const ProfilePage = ({ userObject }) => {
-  // This function outputs what the user does (eg: Teaches, Learns)
+  // This function outputs the role of the user (eg: Teaches, Learns)
+  // It is used to display the user's role in the user profile.
   const userDoes = userObject.user_type === "student" ? "Learns" : "Teached";
 
+  // - Here, the user object properties are broken down and inserted into their corresponding positions for display.
   return (
     <div id="user-profile">
       <span id="name-section">

@@ -1,10 +1,15 @@
-/* Media query for Mobile devices (devive with <= 480px) */
+/* 
+=====================================================
+Media query for Mobile devices (devive with <= 480px)
+===================================================== 
+*/
+
 @media only screen and (max-width: 480px) {
-  /*
-  */
   /* *******   PAGE LAYOUT SETTINGS   ****** */
+
   .TopBar {
     height: 10%;
+    font-size: 12px;
   }
 
   #main-container {
@@ -45,11 +50,12 @@
   form {
     font-weight: normal;
     width: 90%;
+    font-size: 12px;
   }
 
   /* ****************   STYLINGS FOR INDIVIDUAL PAGES   **********************/
 
-  /* RegistrationPage.jsx*/
+  /* -------  RegistrationPage.jsx  ---------*/
   #registration-form {
     flex-direction: column;
     align-items: center;
@@ -58,7 +64,7 @@
     padding: 20px 2px;
   }
 
-  /*HomePage.jsx*/
+  /* --------  HomePage.jsx ---------*/
   #home {
     width: 100%;
     font-size: 5.5vw;
@@ -68,7 +74,7 @@
     font-size: 3.5vw;
   }
 
-  /* SearchResultPage.jsx*/
+  /* --------  SearchResultPage.jsx  --------*/
   #search-result-page {
     padding: 0;
     width: 100vw;
@@ -118,10 +124,16 @@
     width: 100%;
   }
 
+  /* --------  Static pages of navigation menu  --------*/
   .NavBarPage {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2% 5%;
+    font-size: 12px;
+  }
+  .NavBarPage h2 {
+    width: 100%;
+    padding-left: 5px;
   }
 }

@@ -1,3 +1,10 @@
+/*
+======================================================================================
+- This is a static page which is directly rendered to the "DisplaySection". 
+- The rendering happens when user clicks on the "Features" button in the navigation menu.
+======================================================================================
+*/
+
 const FeaturesPage = (
   <div className="NavBarPage" key={"features"}>
     <h2>Current Version</h2>

@@ -1,3 +1,10 @@
+/*
+============================================================================================
+- This is a static page which is directly rendered to the "DisplaySection". 
+- The rendering happens when user clicks on the "Data Policy" button in the navigation menu.
+============================================================================================
+*/
+
 const DataPolicyPage = (
   <div className="NavBarPage" key={"data-policy"}>
     <h2>Data Policy</h2>

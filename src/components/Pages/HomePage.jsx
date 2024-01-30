@@ -1,4 +1,9 @@
-/*This is the home-page. The text in this page is animated using CSS*/
+/*
+=====================================================================
+This file contains the animated quote displayed in the Home page. 
+The text in this page is animated using CSS in pageStyles.css
+=====================================================================
+*/
 
 const HomePage = (
   <div id="home" key={"home"}>

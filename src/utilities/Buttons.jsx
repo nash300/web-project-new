@@ -1,4 +1,12 @@
-// ButtonComponents.jsx
+/*
+====================================================================================
+ Buttons.jsx.jsx
+====================================================================================
+- This file includes the button objects that are used to render into "ButtonSection"
+- Their onClick functions are defined in the "context provider" file, so that they- 
+can be used anywhere in this project.
+====================================================================================
+*/
 export const LetsBeginBtn = ({ onClick }) => (
   <button className="button" key={"letsBeginBtn"} onClick={onClick}>
     Lets Begin!

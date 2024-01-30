@@ -1,8 +1,11 @@
-// This is the `TopBar` component, which is made the following elements:
-// 1. A logo
-// 2. A navigation menu
-// The navigation menu's onClick functions are stored in a contextProvider.
-//-------------------------------------------------------------------------
+/*
+=========================================================================
+ This is the `TopBar` component, which is made the following elements:
+ 1. A logo
+ 2. A navigation menu
+ The navigation menu's onClick functions are stored in a contextProvider.
+ ========================================================================
+*/
 
 import React, { useContext } from "react";
 import { CommonContext } from "../../context_files/commonContext";

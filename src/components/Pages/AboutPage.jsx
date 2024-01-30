@@ -1,3 +1,10 @@
+/*
+======================================================================================
+- This is a static page which is directly rendered to the "DisplaySection". 
+- The rendering happens when user clicks on the "About" button in the navigation menu.
+======================================================================================
+*/
+
 const AboutPage = (
   <div className="NavBarPage" key={"about"}>
     <h2>Who Are We?</h2>

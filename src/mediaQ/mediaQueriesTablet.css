@@ -1,6 +1,14 @@
-/* Media query for Tablet devices (  481px <= devive with <= 760px) */
+/* 
+================================================================
+Media query for Tablet devices (  481px <= devive with <= 760px)
+================================================================ 
+*/
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  * {
+    font-size: 13px;
+  }
+
   .NavBarPage {
     padding: 0px 8%;
   }
@@ -8,5 +16,13 @@
   form {
     font-weight: normal;
     width: 70%;
+  }
+
+  #registration-form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background: rgba(255, 255, 255, 0.808);
+    padding: 20px 2px;
   }
 }

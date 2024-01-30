@@ -1,3 +1,12 @@
+/*
+CountryList.jsx
+===========================================================================
+- This file includes an array including a country name list.
+- This country names are used in dropdown menus in forms.
+- The list can be easily extended by adding more countries into this later.
+===========================================================================
+*/
+
 const CountryList = [
   { id: 1, name: "United States" },
   { id: 2, name: "Canada" },

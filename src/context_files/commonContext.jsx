@@ -1,9 +1,12 @@
-// This file defines all global "States" and "contextProviders" that are used by other components in this website.
-// The definictions follow the order as they are used by the <App/> component.
-// The MainContainer(consists of two sections) :
-//   1. Button section: Handles user interactions and button clicks.
-//   2. Display section: Renders output components, such as pages and forms.
-//----------------------------------------------------------------------------------------------------------------
+/*
+================================================================================================================
+ This file defines all global "States" and "contextProviders" that are used by other components in this website.
+ The definictions follow the order as they are used by the <App/> component.
+ The MainContainer(consists of two sections) :
+   1. Button section: Handles user interactions and button clicks.
+   2. Display section: Renders output components, such as pages and forms.
+================================================================================================================
+*/
 
 import React, { createContext, useState } from "react";
 // Importing pages

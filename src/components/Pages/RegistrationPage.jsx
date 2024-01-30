@@ -1,7 +1,10 @@
-// This file defines the registration form component.
-// Users can use this form to register their classified ads in the system.
-// In addition to the details entered by the user, the user type and datestamp are automatically included in the validation process.
-//---------------------------------------------------------------------------------------------------------------------------------
+/*
+==================================================================================================================================
+ This file defines the registration form component.
+ Users can use this form to register their classified ads in the system.
+ In addition to the details entered by the user, the user type and date-stamp are automatically included in the validation process.
+ =================================================================================================================================
+*/
 
 import React, { useContext, useState } from "react";
 import CountryList from "../../utilities/CountryList";
@@ -101,6 +104,7 @@ const RegistrationPage = () => {
   return (
     <div id="registration-form">
       {isSubmitted ? (
+        /* updates the display section once the submit becomes successful */
         <MessageBox
           heading="Registration is successful!"
           msgText={`Your details are now visible to all ${
@@ -109,6 +113,7 @@ const RegistrationPage = () => {
           instructions="Thank you for registering!"
         />
       ) : (
+        /* Displays the form as long as the "isSubmitted" state remains "null" */
         <form id="submit-form" onSubmit={handleFormSubmit}>
           <label htmlFor="name">
             Name of the {userType} *

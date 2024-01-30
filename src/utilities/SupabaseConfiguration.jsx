@@ -1,3 +1,11 @@
+/*
+CountryList.jsx
+=======================================================================================
+- This file includes configurations for using "Supabase" API.
+- Accsess the back-end can be done by importing this file at any level of this project.
+=======================================================================================
+*/
+
 import { createClient } from "@supabase/supabase-js";
 
 const SUPABASE_URL = "https://ctishtsbuaiuzoscjyfd.supabase.co";

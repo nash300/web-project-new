@@ -1,4 +1,9 @@
-// This is the section where it displays the buttons.
+/*
+===================================================================================
+This component simply reads the value (button object) in the "visibleButtons" state
+and displays it in the "ButtonSection"
+===================================================================================
+*/
 
 import React, { useContext } from "react";
 import { CommonContext } from "../../context_files/commonContext";

@@ -1,3 +1,13 @@
+/*
+SubjectDisciplineList.jsx
+============================================================================
+ - This file includes an array object which contains a list of subjects and- 
+ their corresponding disciplines.
+ - These items are used in dropdown menus in forms.
+- The list can be easily extended by adding more countries into this later.
+============================================================================
+*/
+
 const SubjectDisciplineList = [
   {
     id: 1,

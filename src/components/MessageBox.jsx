@@ -1,3 +1,11 @@
+/*
+=========================================================================
+This component is used to display a message to the user.
+It defines a simple structure for the message and put the recieved parameter
+values into their corresponding places in the structure.
+ ========================================================================
+*/
+
 import React from "react";
 
 const MessageBox = ({ heading, msgText, instructions }) => {

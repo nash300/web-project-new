@@ -1,7 +1,7 @@
-/******************************************************************************************************
+/*****************************************************************************
  This CSS file contains all styles applied to the generell page layout. 
- Styles for the individual display components are stored in "pageStyles.css" file in the Src directory.
-******************************************************************************************************/
+ Styles for the individual display components are stored in "pageStyles.css".
+******************************************************************************/
 /*
 /*
 /********************************************************/
@@ -32,9 +32,7 @@ li {
   list-style-type: none;
 }
 
-/***************************************************
-/*  ELEMENTS IN FORMS 
-/***************************************************
+/*  --------   ELEMENTS IN FORMS -----------------*/
 /* These settings apply for all forms in this site*/
 form {
   display: flex;
@@ -82,9 +80,7 @@ form textarea {
   box-shadow: 0 0 5px rgb(187, 187, 187);
 }
 
-/***************************************************
-/*  BODY & ROOT 
-/**************************************************/
+/* ---------  BODY & ROOT -------------- */
 /* Using the maximum width of the screen*/
 body {
   margin: 0px;
